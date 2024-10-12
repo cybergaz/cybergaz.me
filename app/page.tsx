@@ -9,10 +9,11 @@ import { motion } from "framer-motion";
 
 export default function Home() {
     return (
-        <div className="mx-auto overflow-hidden"> {/* <Particles */}
-            {/*     className="fixed transition-colors inset-0 -z-10 animate-fadein" */}
-            {/*     quantity={70} */}
-            {/* /> */}
+        <div className="mx-auto overflow-hidden">
+            <Particles
+                className="fixed transition-colors inset-0 -z-10 animate-fadein"
+                quantity={70}
+            />
             {/* <BackgroundBeams className="" /> */}
             <Hero />
             <div className='mt-[20svh] csm:mt-0 animate-zoomin space-y-6 md:my-10 flex justify-center items-center bg-gray-800'>
