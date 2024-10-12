@@ -11,3 +11,9 @@ export const INSTAGRAM_URL = 'https://www.instagram.com/cyber_gaz'
 export const X_URL = 'https://x.com/gaz_guine'
 export const LINKEDIN_URL = 'https://www.linkedin.com/in/krishna-kant-bb372b212'
 
+export const NAVLINKS = [
+    { title: "Home", href: "/" },
+    { title: "About", href: "#about" },
+    { title: "Projects", href: "#projects" },
+    { title: "contact", href: "#contact" },
+]

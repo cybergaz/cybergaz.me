@@ -1,12 +1,19 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import { Providers } from "@/app/components/providers";
-import { Footer } from "@/app/components/footer";
-import Header from "@/app/components/header";
+import Image from "next/image";
+import { Inter, Quicksand, Poppins } from "next/font/google";
+import "@/app/globals.css";
+import { ThemeProvider } from "@/components/theme-provider"
+import { Footer } from "@/components/footer";
+import Header from "@/components/header";
 import { SITE_URL, SITE_TITLE, SITE_DESCRIPTION, SITE_NAME, SITE_KEYWORDS } from "@/lib/constants"
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
+const poppins = Poppins({
+    subsets: ['latin'],
+    weight: ['300', '400', '500', '600', '700', '800'],
+    variable: '--font-poppins'
+})
+const quicksand = Quicksand({ subsets: ["latin"], weight: ["500"], });
 
 export const metadata: Metadata = {
     metadataBase: new URL(SITE_URL),
@@ -55,8 +62,7 @@ export const metadata: Metadata = {
     },
     icons: {
         icon: '/favicon/favicon.ico',
-        shortcut: '/favicon/favicon-16x16.png',
-        apple: "/favicon/apple-touch-icon.png",
+        // shortcut: '/favicon/favicon-16x16.png', apple: "/favicon/apple-touch-icon.png",
     }
 }
 
@@ -66,16 +72,34 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" suppressHydrationWarning>
-            <body className={inter.className}>
-                <Providers>
-                    <Header />
-                    <main className="">
+        <html lang="en" className={poppins.className} suppressHydrationWarning>
+            <body className="">
+                <ThemeProvider>
+                    <main className="px-1 relative">
+                        <Image
+                            width={1400}
+                            height={500}
+                            className='absolute left-1/2 top-0 -z-10 -translate-x-1/2'
+                            src='/images/gradient-background-top.png'
+                            alt=''
+                            role='presentation'
+                            priority
+                        />
+                        <Header />
                         {children}
+                        <Footer />
+                        <Image
+                            width={1312}
+                            height={447}
+                            className='absolute -bottom-6 left-1/2 -z-10 -translate-x-1/2'
+                            src='/images/gradient-background-bottom.png'
+                            alt=''
+                            role='presentation'
+                            priority
+                        />
                     </main>
-                    <Footer />
-                </Providers >
+                </ThemeProvider>
             </body>
-        </html>
+        </html >
     );
 }
