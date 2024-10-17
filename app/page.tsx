@@ -8,10 +8,13 @@ import { LampContainer } from "@/components/ui/lamp";
 import { motion } from "framer-motion";
 
 export default function Home() {
+    // -----------------------------------------------------------------------------------------------
+    //  color   bg-blue-300, bg-blue-400  is something else (make some use of them)
+    // -----------------------------------------------------------------------------------------------
     return (
-        <div className="mx-auto overflow-hidden">
+        <div className="mx-auto overflow-hidden" id="home">
             <Particles
-                className="fixed transition-colors inset-0 -z-10 animate-fadein"
+                className="fixed transition-colors inset-0 -z-[8] animate-fadein"
                 quantity={70}
             />
             {/* <BackgroundBeams className="" /> */}
@@ -21,6 +24,12 @@ export default function Home() {
                     hello world how are you doing??
                 </button>
             </div>
+            {/* <div className="bg-[#fbe2e3] absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] dark:bg-[#5b3b3c]"></div> */}
+            {/* <div className="bg-[#dbd7fb] absolute top-[-1rem] -z-10 left-[-35rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] dark:bg-[#433f68]"></div> */}
+            {/**/}
+            {/* <div className="bg-[#dbd7fb] absolute bottom-0 -z-10 left-[-35rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] dark:bg-[#433f68]"></div> */}
+            {/* <div className="bg-[#fbe2e3] absolute bottom-0 -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] dark:bg-[#5b3b3c]"></div> */}
+
             <LampContainer className="w-screen">
                 <motion.h1
                     initial={{ opacity: 0.5, y: 100 }}
@@ -49,7 +58,7 @@ export default function Home() {
                 ahoy there! 🎉 i'm a seasoned full-stack developer, proudly waving my information technology undergrad cape from sppu! 🎓 i've delved into web development since my freshman days. 💻 my focus lies in crafting websites and applications that seamlessly blend functionality. oh, and did i mention my love for building full-stack clones and side projects?💡it's kind of my thing! 🚀
             </div>
 
-            <div className="h-96">
+            <div className="h-96" id="about">
                 temp content
                 ahoy there! 🎉 i'm a seasoned full-stack developer, proudly waving my information technology undergrad cape from sppu! 🎓 i've delved into web development since my freshman days. 💻 my focus lies in crafting websites and applications that seamlessly blend functionality. oh, and did i mention my love for building full-stack clones and side projects?💡it's kind of my thing! 🚀
             </div>
@@ -73,7 +82,7 @@ export default function Home() {
                 temp content
                 ahoy there! 🎉 i'm a seasoned full-stack developer, proudly waving my information technology undergrad cape from sppu! 🎓 i've delved into web development since my freshman days. 💻 my focus lies in crafting websites and applications that seamlessly blend functionality. oh, and did i mention my love for building full-stack clones and side projects?💡it's kind of my thing! 🚀
             </div>
-            <div className="h-96">
+            <div className="h-96" id="contact">
                 temp content
                 ahoy there! 🎉 i'm a seasoned full-stack developer, proudly waving my information technology undergrad cape from sppu! 🎓 i've delved into web development since my freshman days. 💻 my focus lies in crafting websites and applications that seamlessly blend functionality. oh, and did i mention my love for building full-stack clones and side projects?💡it's kind of my thing! 🚀
             </div>

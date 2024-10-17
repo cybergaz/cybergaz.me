@@ -13,9 +13,15 @@ const config: Config = {
                 csm: { max: "700px" }
             },
             fontFamily: {
-                quicksand: ['quicksand', 'sans-serif'],
-                comfortaa: ['comfortaa', 'sans-serif'],
-                inter: ['inter', 'sans-serif'],
+                comfortaa: ['var(--font-comfortaa)', 'sans-serif'],
+                monte: ['var(--font-montserrat)', 'sans-serif'],
+                inter: ['var(--font-inter)', 'sans-serif'],
+                noto: ['var(--font-noto)', 'sans-serif'],
+                ballet: ['var(--font-ballet)', 'cursive'], // Use the CSS variable from `next/font`
+                paris: ['var(--font-paris)', 'cursive'],
+                tang: ['var(--font-tangerine)', 'cursive'],
+                pfs: ['var(--font-pfs)', 'cursive'],
+                gv: ['var(--font-gv)', 'cursive'],
             },
             rotate: {
                 '360': '360deg',
@@ -32,25 +38,6 @@ const config: Config = {
                 zoomout: 'zoom-out 1s ease-in-out 0.25s 1',
             },
             keyframes: {
-                'title': {
-                    "0%": {
-                        "line-height": "0%",
-                        "letter-spacing": "0.25em",
-                        opacity: "0",
-                    },
-                    "25%": {
-                        "line-height": "0%",
-                        opacity: "0%",
-                    },
-                    "80%": {
-                        opacity: "100%",
-                    },
-
-                    "100%": {
-                        "line-height": "100%",
-                        opacity: "100%",
-                    },
-                },
                 "fade-in": {
                     "0%": {
                         opacity: "0%",

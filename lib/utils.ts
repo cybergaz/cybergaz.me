@@ -20,7 +20,6 @@ export function useIsMounted() {
     return useCallback(() => isMounted.current, []);
 }
 
-
 interface MousePosition {
     x: number;
     y: number;
