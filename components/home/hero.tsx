@@ -1,35 +1,39 @@
-import { TextHoverEffect } from "@/components/ui/text-hover-effect"
 import { motion } from "framer-motion"
+import React from "react";
+import { FlipWords } from "@/components/ui/flip-words";
 
 const Hero = () => {
-    return (
+    const words = ["better", "cute", "beautiful", "modern"];
+    const names = ["Krishna", "< cybergaz />"];
 
-        <section id='home' className="relative min-h-screen max-h-screen mx-auto max-w-[90rem] px-5 sm:px-8 overflow-hidden pt-20">
+    return (
+        <section id='home' className="relative min-h-screen max-h-screen mx-auto max-w-[90rem] px-5 csm:px-8 overflow-hidden pt-28 bg-red-200/00">
             {/* Transforming Ideas into Dynamic Web Solutions and Efficient Software—I'm [Your Name], a Developer Who Blends Versatile Frameworks, Low-Level Precision, and Open-Source Principles to Create Powerful Applications. */}
             {/* Crafting Innovative Solutions with Modern Web Technologies and Low-Level Precision—I'm [Your Name], a Developer Who Blends Cutting-Edge Frameworks with Powerful System Programming. */}
             {/* <span className="font-tang">From To</span> */}
             {/* <br /> */}
+            {/* Hi, I'm [Your Name], a software developer who enjoys crafting full-stack solutions. */}
+            {/* Hi, I'm [Your Name], a software developer who finds joy in building full-stack applications. */}
 
             <div className=" bg-emerald-500">
                 hehe
             </div>
             <motion.div
-                className="p-10 text-7xl font-light mt-14 flex gap-x-5 justify-start"
-                initial={{ opacity: 0, x: -100 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
+                className=""
+                initial={{ opacity: 0, y: -50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ type: "tween", duration: 0.4 }}
             >
-                <span className="font-tang translate-y-2">From</span>
-                <span className="italic"> Responsive Interface</span>
-            </motion.div>
-            <motion.div
-                className="p-10 text-7xl font-light flex gap-x-5 justify-end"
-                initial={{ opacity: 0, x: 100 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
-            >
-                <span className="font-tang translate-y-2">To</span>
-                <span className=""> Powerful Backends</span>
+                <motion.div
+                    className="text-3xl pt-14 font-light text-zinc-400 pl-0.5"
+                >
+                    Hi...
+                </motion.div>
+                <div className="text-7xl pt-6 font-bold mx-auto font-monte text-neutral-600 dark:text-neutral-400">
+                    I'm
+                    <FlipWords words={names} duration={1000} /> <br />
+                </div>
+
             </motion.div>
             {/* <div className="text-2xl font-thin"> */}
             {/**/}

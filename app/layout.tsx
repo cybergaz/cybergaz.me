@@ -1,61 +1,60 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Inter, Noto_Sans, Poppins, Montserrat, Ballet, Parisienne, Tangerine, Petit_Formal_Script, Great_Vibes } from "next/font/google";
+import { Montserrat, Nunito } from "next/font/google";
 import "@/app/globals.css";
 import { ThemeProvider } from "@/components/theme-provider"
 import { Footer } from "@/components/footer";
 import Header from "@/components/header";
 import AnimatedCursor from 'react-animated-cursor';
 import { SITE_URL, SITE_TITLE, SITE_DESCRIPTION, SITE_NAME, SITE_KEYWORDS } from "@/lib/constants"
-import { twMerge } from "tailwind-merge"
-import clsx from "clsx";
+// import { twMerge } from "tailwind-merge"
+// import clsx from "clsx";
 
-const inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
-const ballet = Ballet({
-    subsets: ["latin"],
-    weight: ['400'],
-    variable: '--font-ballet'
-});
-
-const tangerine = Tangerine({
-    subsets: ["latin"],
-    weight: ['400'],
-    variable: '--font-tangerine'
-});
-const gv = Great_Vibes({
-    subsets: ["latin"],
-    weight: ['400'],
-    variable: '--font-gv'
-});
-
-const pfs = Petit_Formal_Script({
-    subsets: ["latin"],
-    weight: ['400'],
-    variable: '--font-pfs'
-});
-
-const paris = Parisienne({
-    subsets: ["latin"],
-    weight: ['400'],
-    variable: '--font-paris'
-});
-
-const poppins = Poppins({
-    subsets: ['latin'],
-    weight: ['100', '200', '300', '400', '500', '600', '700', '800'],
-    variable: '--font-poppins'
-})
-
-const noto = Noto_Sans({
-    subsets: ['latin'],
-    weight: ['100', '200', '300', '400', '500', '600', '700', '800'],
-    variable: '--font-noto'
-})
+// const tangerine = Tangerine({
+//     subsets: ["latin"],
+//     weight: ['400'],
+//     variable: '--font-tangerine'
+// });
+// const gv = Great_Vibes({
+//     subsets: ["latin"],
+//     weight: ['400'],
+//     variable: '--font-gv'
+// });
+//
+// const pfs = Petit_Formal_Script({
+//     subsets: ["latin"],
+//     weight: ['400'],
+//     variable: '--font-pfs'
+// });
+//
+// const paris = Parisienne({
+//     subsets: ["latin"],
+//     weight: ['400'],
+//     variable: '--font-paris'
+// });
+//
+// const poppins = Poppins({
+//     subsets: ['latin'],
+//     weight: ['100', '200', '300', '400', '500', '600', '700', '800'],
+//     variable: '--font-poppins'
+// })
+//
+// const noto = Noto_Sans({
+//     subsets: ['latin'],
+//     weight: ['100', '200', '300', '400', '500', '600', '700', '800'],
+//     variable: '--font-noto'
+// })
 
 const montserrat = Montserrat({
     subsets: ['latin'],
     weight: ['100', '200', '300', '400', '500', '600', '700', '800'],
     variable: '--font-montserrat'
+})
+
+const nunito = Nunito({
+    subsets: ['latin'],
+    weight: ['200', '300', '400', '500', '600', '700', '800'],
+    variable: '--font-poppins'
 })
 
 export const metadata: Metadata = {
@@ -115,18 +114,18 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" className={twMerge(clsx(montserrat.variable, paris.variable, ballet.variable, pfs.variable, tangerine.variable, gv.variable))} suppressHydrationWarning>
-            <body className={"text-lg"}>
+        <html lang="en" className={montserrat.variable} suppressHydrationWarning>
+            <body className={""}>
                 <ThemeProvider>
-                    <AnimatedCursor
-                        innerSize={8}
-                        outerSize={35}
-                        color='100, 100, 220'
-                        outerAlpha={0.1}
-                        innerScale={2}
-                        outerScale={2}
-
-                    />
+                    {/* <AnimatedCursor */}
+                    {/*     innerSize={8} */}
+                    {/*     outerSize={35} */}
+                    {/*     color='100, 100, 220' */}
+                    {/*     outerAlpha={0.1} */}
+                    {/*     innerScale={2} */}
+                    {/*     outerScale={2} */}
+                    {/**/}
+                    {/* /> */}
                     <main className="relative">
                         {/* <Image */}
                         {/*     width={1400} */}
@@ -156,6 +155,7 @@ export default function RootLayout({
                             priority
                         />
                         <div className="fixed h-screen w-screen bg-background/30 backdrop-blur-xl -z-[9]" />
+
                         <Header />
                         {children}
                         <Footer />

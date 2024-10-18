@@ -10,14 +10,13 @@ const config: Config = {
     theme: {
         extend: {
             screens: {
-                csm: { max: "700px" }
+                csm: { max: "955px" }
             },
             fontFamily: {
                 comfortaa: ['var(--font-comfortaa)', 'sans-serif'],
                 monte: ['var(--font-montserrat)', 'sans-serif'],
                 inter: ['var(--font-inter)', 'sans-serif'],
                 noto: ['var(--font-noto)', 'sans-serif'],
-                ballet: ['var(--font-ballet)', 'cursive'], // Use the CSS variable from `next/font`
                 paris: ['var(--font-paris)', 'cursive'],
                 tang: ['var(--font-tangerine)', 'cursive'],
                 pfs: ['var(--font-pfs)', 'cursive'],
