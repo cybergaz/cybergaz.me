@@ -54,7 +54,7 @@ const montserrat = Montserrat({
 const nunito = Nunito({
     subsets: ['latin'],
     weight: ['200', '300', '400', '500', '600', '700', '800'],
-    variable: '--font-poppins'
+    variable: '--font-nunito'
 })
 
 export const metadata: Metadata = {
@@ -114,7 +114,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" className={montserrat.variable} suppressHydrationWarning>
+        <html lang="en" className={`${montserrat.variable} ${nunito.variable}`} suppressHydrationWarning>
             <body className={""}>
                 <ThemeProvider>
                     {/* <AnimatedCursor */}
@@ -139,7 +139,7 @@ export default function RootLayout({
                         <Image
                             width={1600}
                             height={600}
-                            className='fixed -right-[52rem] -top-96 -z-10'
+                            className='fixed select-none -right-[52rem] -top-96 -z-10'
                             src='/images/docs-right.png'
                             alt=''
                             role='presentation'
@@ -148,12 +148,13 @@ export default function RootLayout({
                         <Image
                             width={1500}
                             height={600}
-                            className='fixed -left-[40rem] -bottom-96 -z-10'
+                            className='fixed select-none -left-[40rem] -bottom-96 -z-10'
                             src='/images/docs-left.png'
                             alt=''
                             role='presentation'
                             priority
                         />
+
                         <div className="fixed h-screen w-screen bg-background/30 backdrop-blur-xl -z-[9]" />
 
                         <Header />

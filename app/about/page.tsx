@@ -1,18 +1,11 @@
 
-"use client";
-
-import Image from "next/image";
-import { NAVLINKS } from "@/lib/constants";
-
-
-import { useState } from "react";
-import { motion } from "framer-motion";
-import Link from "next/link";
+import { ArrowDown, Construction } from "lucide-react";
 
 export default function About() {
     return (
-        <div className="pt-20">
-            about page
+        <div className="h-[50vh] text-2xl mx-auto flex justify-center items-center max-w-5xl min-w-72">
+            About Page is under construction
+            <Construction width={120} height={40} />
         </div>
     );
 }

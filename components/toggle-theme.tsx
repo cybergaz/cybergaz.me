@@ -26,7 +26,7 @@ const ToggleTheme = () => {
 
         <button
             onClick={toggleTheme}
-            className="w-[1.6rem] h-[1.6rem] ease ml-3 flex items-center justify-center rounded-full p-1 text-zinc-900 dark:text-zinc-300"
+            className="w-[1.6rem] ease hover:bg-foreground/5 ml-3 flex items-center justify-center rounded-full p-1 text-zinc-900 dark:text-zinc-300"
             aria-label="theme-switcher"
         >
 

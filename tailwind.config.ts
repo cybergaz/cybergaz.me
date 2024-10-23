@@ -15,6 +15,7 @@ const config: Config = {
             fontFamily: {
                 comfortaa: ['var(--font-comfortaa)', 'sans-serif'],
                 monte: ['var(--font-montserrat)', 'sans-serif'],
+                nunito: ['var(--font-nunito)', 'sans-serif'],
                 inter: ['var(--font-inter)', 'sans-serif'],
                 noto: ['var(--font-noto)', 'sans-serif'],
                 paris: ['var(--font-paris)', 'cursive'],
@@ -30,7 +31,6 @@ const config: Config = {
                 'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
             },
             animation: {
-                title: "title 3s ease-out forwards",
                 fadein: 'fade-in 1s ease-in-out 0.25s 1',
                 fadeout: 'fade-out 1s ease-out 0.25s 1',
                 zoomin: 'zoom-in 1s ease-in-out 0.25s 1',

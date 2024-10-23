@@ -18,11 +18,14 @@ export default function Home() {
             {/* /> */}
             {/* <BackgroundBeams className="" /> */}
             <Hero />
-            <div className='mt-[20svh] csm:mt-0 animate-zoomin space-y-6 md:my-10 flex justify-center items-center bg-gray-800'>
-                <button className="">
-                    hello world how are you doing??
-                </button>
-            </div>
+
+
+            {/* <div className='mt-[20svh] csm:mt-0 animate-zoomin space-y-6 md:my-10 flex justify-center items-center bg-gray-800'> */}
+            {/*     <button className=""> */}
+            {/*         hello world how are you doing?? */}
+            {/*     </button> */}
+            {/* </div> */}
+
             {/* <div className="bg-[#fbe2e3] absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] dark:bg-[#5b3b3c]"></div> */}
             {/* <div className="bg-[#dbd7fb] absolute top-[-1rem] -z-10 left-[-35rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] dark:bg-[#433f68]"></div> */}
             {/**/}
@@ -44,15 +47,15 @@ export default function Home() {
             {/*     </motion.h1> */}
             {/* </LampContainer> */}
             {/* <div className="h-72 w-72 bg-black/20 border-red-400 border-2 rounded-lg fixed backdrop-blur-md" >hello</div> */}
-            <div className="h-96">
-                temp content
-                ahoy there! 🎉 i'm a seasoned full-stack developer, proudly waving my information technology undergrad cape from sppu! 🎓 i've delved into web development since my freshman days. 💻 my focus lies in crafting websites and applications that seamlessly blend functionality. oh, and did i mention my love for building full-stack clones and side projects?💡it's kind of my thing! 🚀
-            </div>
-            <div className="h-96">
-                temp content
-                ahoy there! 🎉 i'm a seasoned full-stack developer, proudly waving my information technology undergrad cape from sppu! 🎓 i've delved into web development since my freshman days. 💻 my focus lies in crafting websites and applications that seamlessly blend functionality. oh, and did i mention my love for building full-stack clones and side projects?💡it's kind of my thing! 🚀
-            </div>
-            <div className="h-96">temp content</div>
+            {/* <div className="h-96"> */}
+            {/*     temp content */}
+            {/*     ahoy there! 🎉 i'm a seasoned full-stack developer, proudly waving my information technology undergrad cape from sppu! 🎓 i've delved into web development since my freshman days. 💻 my focus lies in crafting websites and applications that seamlessly blend functionality. oh, and did i mention my love for building full-stack clones and side projects?💡it's kind of my thing! 🚀 */}
+            {/* </div> */}
+            {/* <div className="h-96"> */}
+            {/*     temp content */}
+            {/*     ahoy there! 🎉 i'm a seasoned full-stack developer, proudly waving my information technology undergrad cape from sppu! 🎓 i've delved into web development since my freshman days. 💻 my focus lies in crafting websites and applications that seamlessly blend functionality. oh, and did i mention my love for building full-stack clones and side projects?💡it's kind of my thing! 🚀 */}
+            {/* </div> */}
+            {/* <div className="h-96">temp content</div> */}
         </div>
     );
 }

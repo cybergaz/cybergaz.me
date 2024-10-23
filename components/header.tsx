@@ -30,78 +30,87 @@ export default () => {
 
     return (
         <>
-            <header
-                className="fixed z-40 px-20 csm:px-10 w-screen h-20 csm:h-[4.5rem] flex justify-between items-center font-monte font-medium text-sm backdrop-blur-lg"
-            >
-                <div className="flex justify-center items-center">
-                    <Link href="/" className="pr-1 csm:pr-1 csm:w-9 hidden csm:block w-8 active:scale-95 transition-transform duration-300"> <Image className="grayscale hover:grayscale-0 transition-all duration-500" src="/favicon/favicon.ico" alt="site-logo" width={40} height={30} /> </Link>
-                    <motion.span
-                        className="text-xl mr-40 csm:mr-1 csm:hidden will-change-transform cursor-pointer"
+            <header className="fixed z-40 w-screen px-5 h-20 csm:h-[4.5rem] flex justify-between items-center font-monte font-medium text-sm " >
+                <nav className="flex justify-between items-center w-[110rem] mx-auto rounded-2xl px-5 py-2 bg-foreground/[0.025] dark:bg-foreground/[0.012] backdrop-blur-lg">
+                    <motion.div
+                        className="flex justify-center items-center pr-56 csm:pr-1"
                         initial={{ opacity: 0, x: -30 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.4 }}
+                        transition={{ duration: 0.3 }}
                         onClick={() => router.push("/")}
                     >
-                        CyberGaz
-                    </motion.span>
-                </div>
+                        <Link href="/" className="csm:w-8 w-9 active:scale-95 transition-transform duration-300"> <Image className="grayscale hover:grayscale-0 transition-all duration-500" src="/favicon/favicon.ico" alt="site-logo" width={40} height={30} /> </Link>
+                    </motion.div>
+                    {/* <motion.span */}
+                    {/*     className="text-xl mr-40 csm:mr-1 hidden will-change-transform cursor-pointer" */}
+                    {/*     initial={{ opacity: 0, x: -30 }} */}
+                    {/*     animate={{ opacity: 1, x: 0 }} */}
+                    {/*     transition={{ duration: 0.4 }} */}
+                    {/*     onClick={() => router.push("/")} */}
+                    {/* > */}
+                    {/*     CyberGaz */}
+                    {/* </motion.span> */}
 
-                <motion.div
-                    className="px-[0.4rem] py-4 border-[0.5px] border-foreground/10 bg-foreground/10 rounded-full csm:hidden will-change-auto"
-                    initial={{ opacity: 0, y: -50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4 }}
-                >
-                    <ul className="flex items-center justify-center gap-x-3">
-                        {NAVLINKS.map(({ title, href }, i) => {
-                            const isActive = href === pathname
-                            return (
-                                <li key={i} >
-                                    <div className="active:scale-95 transition-transform duration-300">
-                                        <Link
-                                            href={href}
-                                            className={cn('rounded-full px-[1.35rem] py-[0.7rem] hover:bg-foreground/5 transition-all duration-500', isActive && "bg-foreground/10")}
-                                        >
-                                            {title}
-                                        </Link>
-                                    </div>
-                                </li>
-                            )
-                        })
-                        }
-                    </ul >
-                </motion.div>
+                    <motion.div
+                        className="px-[0.4rem] py-4 border-[0.5px] border-foreground/10 bg-foreground/[0.03] dark:bg-foreground/[0.01] self-center rounded-full csm:hidden will-change-auto"
+                        initial={{ opacity: 0, scale: 0.85 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.3 }}
+                    >
+                        <ul className="relative flex items-center justify-center gap-x-3">
+                            {NAVLINKS.map(({ title, href }, i) => {
+                                const isActive = href === pathname
+                                return (
+                                    <li key={i} className=" grid grid-cols-1 space-y-9 justify-center items-center place-items-center">
+                                        <div className="active:scale-95 transition-transform duration-300">
+                                            <Link
+                                                href={href}
+                                                className={cn('rounded-full px-[1.35rem] z-20 py-[0.7rem] hover:bg-foreground/[0.02] transition-all duration-300', isActive && "bg-foreground/5")}
+                                            >
+                                                {title}
 
-                <motion.div
-                    className="flex justify-center items-center gap-1 will-change-auto"
-                    initial={{ opacity: 0, x: 30 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.4 }}
-                >
-                    <a className="flex justify-center items-center  transition-colors duration-500 gap-1 px-3 py-2 rounded-full hover:bg-foreground/10">
-                        Github <ArrowUpRight width={20} />
-                    </a>
-                    <a className="flex justify-center items-center transition-colors duration-500 gap-1 px-3 py-2 rounded-full hover:bg-foreground/10">
-                        Resume <ArrowUpRight width={20} />
-                    </a>
-                    <ToggleTheme />
-                </motion.div>
+                                            </Link>
+                                            {/* <span className=" inset-x-0 w-12 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" /> */}
+                                        </div>
+                                        {isActive && <div className="absolute w-12 h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent " />}
+                                    </li>
+                                )
+                            })
+                            }
+                        </ul >
+                    </motion.div>
 
-                <button onClick={() => setIsOpen(!isOpen)} className={cn("relative group hidden csm:block")}>
-                    <div className={cn("relative flex overflow-hidden items-center justify-center rounded-full w-[50px] h-[50px] transform transition-all duration-200")}>
-                        <div className={cn("flex flex-col justify-between w-[14px] h-[14px] transform transition-all duration-300 origin-center")}>
+                    <motion.div
+                        className="flex justify-center items-center gap-1 will-change-auto"
+                        initial={{ opacity: 0, x: 30 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.3 }}
+                    >
+                        <a className="flex justify-center items-center  transition-colors duration-500 gap-1 px-3 py-2 rounded-full cursor-pointer hover:bg-foreground/10">
+                            Github <ArrowUpRight width={20} />
+                        </a>
+                        <a className="flex justify-center items-center transition-colors duration-500 gap-1 px-3 py-2 rounded-full cursor-pointer hover:bg-foreground/10">
+                            Resume <ArrowUpRight width={20} />
+                        </a>
+                        <ToggleTheme />
+                    </motion.div>
 
-                            <div className={cn("bg-foreground h-[2px] w-5 rounded-full transform transition-all duration-300 origin-left", { ["translate-x-10"]: isOpen })}></div>
-                            <div className={cn("bg-foreground h-[2px] w-5 rounded-full transform transition-all duration-300 delay-75", { ["translate-x-10"]: isOpen })}></div>
-                            <div className={cn("bg-foreground h-[2px] w-5 rounded-full transform transition-all duration-300 origin-left delay-150", { ["translate-x-10"]: isOpen })}></div>
+                    <button onClick={() => setIsOpen(!isOpen)} className={cn("relative group hidden csm:block")}>
+                        <div className={cn("relative flex overflow-hidden items-center justify-center rounded-full w-[50px] h-[50px] transform transition-all duration-200")}>
+                            <div className={cn("flex flex-col justify-between w-[14px] h-[14px] transform transition-all duration-300 origin-center")}>
 
-                            <div className={cn("absolute items-center justify-between transform transition-all duration-500 top-2 -translate-x-10 flex w-0", { ["translate-x-0 w-12"]: isOpen })}>
-                                <div className={cn("absolute bg-foreground h-[2px] w-5 transform transition-all duration-500 rotate-0 delay-300", { ["rotate-45"]: isOpen })}></div>
-                                <div className={cn("absolute bg-foreground h-[2px] w-5 transform transition-all duration-500 -rotate-0 delay-300 ", { ["-rotate-45"]: isOpen })}></div>
+                                <div className={cn("bg-foreground h-[2px] w-5 rounded-full transform transition-all duration-300 origin-left", { ["translate-x-10"]: isOpen })}></div>
+                                <div className={cn("bg-foreground h-[2px] w-5 rounded-full transform transition-all duration-300 delay-75", { ["translate-x-10"]: isOpen })}></div>
+                                <div className={cn("bg-foreground h-[2px] w-5 rounded-full transform transition-all duration-300 origin-left delay-150", { ["translate-x-10"]: isOpen })}></div>
+
+                                <div className={cn("absolute items-center justify-between transform transition-all duration-500 top-2 -translate-x-10 flex w-0", { ["translate-x-0 w-12"]: isOpen })}>
+                                    <div className={cn("absolute bg-foreground h-[2px] w-5 transform transition-all duration-500 rotate-0 delay-300", { ["rotate-45"]: isOpen })}></div>
+                                    <div className={cn("absolute bg-foreground h-[2px] w-5 transform transition-all duration-500 -rotate-0 delay-300 ", { ["-rotate-45"]: isOpen })}></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </button>
+                    </button>
+                </nav>
             </header>
 
             <div className={cn("hidden csm:block")}>
