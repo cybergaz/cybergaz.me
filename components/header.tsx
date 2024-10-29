@@ -5,16 +5,15 @@ import Link from "next/link"
 import Image from "next/image"
 import { useState } from "react"
 import { ToggleTheme } from "@/components/toggle-theme"
-import { motion } from 'framer-motion';
+import { MotionDiv } from '@/components/ui/motion-div';
 import { cn } from "@/lib/utils"
-import { NAVLINKS } from "@/lib/constants";
-import { useRouter, usePathname } from "next/navigation"
+import { LINKS, NAVLINKS } from "@/lib/constants";
+import { usePathname } from "next/navigation"
 
 export default () => {
     // const [isScrolled, setIsScrolled] = useState<boolean>(false);
     const [isOpen, setIsOpen] = useState(false)
     const pathname = usePathname()
-    const router = useRouter()
 
     // useEffect(() => {
     //     const updateScroll = () => {
@@ -29,29 +28,19 @@ export default () => {
 
     return (
         <>
-            <header className="fixed z-40 w-screen px-5 h-20 csm:h-[4.5rem] flex justify-between items-center font-monte font-medium text-sm " >
-                <nav className="flex justify-between items-center w-[110rem] mx-auto rounded-2xl px-5 py-2 bg-foreground/[0.025] dark:bg-foreground/[0.012] backdrop-blur-lg">
-                    <motion.div
+            <header className="fixed z-40 w-screen px-5 sm:px-1 h-20 csm:h-[4.5rem] flex justify-between items-center font-monte font-medium text-sm " >
+                <nav className="flex justify-between items-center w-[105rem] mx-auto rounded-2xl px-5 sm:px-3 py-2 bg-foreground/[0.02] backdrop-blur-[10px] shadow-md">
+                    <MotionDiv
                         className="flex justify-center items-center pr-56 csm:pr-1"
                         initial={{ opacity: 0, x: -30 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.3 }}
-                        onClick={() => router.push("/")}
                     >
                         <Link href="/" className="csm:w-8 w-9 active:scale-95 transition-transform duration-300"> <Image className="grayscale hover:grayscale-0 transition-all duration-500" src="/favicon/favicon.ico" alt="site-logo" width={40} height={30} /> </Link>
-                    </motion.div>
-                    {/* <motion.span */}
-                    {/*     className="text-xl mr-40 csm:mr-1 hidden will-change-transform cursor-pointer" */}
-                    {/*     initial={{ opacity: 0, x: -30 }} */}
-                    {/*     animate={{ opacity: 1, x: 0 }} */}
-                    {/*     transition={{ duration: 0.4 }} */}
-                    {/*     onClick={() => router.push("/")} */}
-                    {/* > */}
-                    {/*     CyberGaz */}
-                    {/* </motion.span> */}
+                    </MotionDiv>
 
-                    <motion.div
-                        className="px-[0.4rem] py-4 border-[0.5px] border-foreground/10 bg-foreground/[0.03] dark:bg-foreground/[0.01] self-center rounded-full csm:hidden will-change-auto"
+                    <MotionDiv
+                        className="px-[0.4rem] py-4 border-[0.5px] border-foreground/[0.07] rounded-full csm:hidden "
                         initial={{ opacity: 0, scale: 0.85 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.3 }}
@@ -64,7 +53,7 @@ export default () => {
                                         <div className="active:scale-95 transition-transform duration-300">
                                             <Link
                                                 href={href}
-                                                className={cn('rounded-full px-[1.35rem] z-20 py-[0.7rem] hover:bg-foreground/[0.02] transition-all duration-300', isActive && "bg-foreground/5")}
+                                                className={cn('rounded-full underline-offset-2 px-[1.35rem] z-20 py-[0.7rem] hover:bg-foreground/[0.02] transition-all duration-300', isActive && "bg-foreground/5")}
                                             >
                                                 {title}
 
@@ -77,22 +66,22 @@ export default () => {
                             })
                             }
                         </ul >
-                    </motion.div>
+                    </MotionDiv>
 
-                    <motion.div
+                    <MotionDiv
                         className="flex justify-center items-center gap-1 will-change-auto"
                         initial={{ opacity: 0, x: 30 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.3 }}
                     >
-                        <a className="flex justify-center items-center  transition-colors duration-500 gap-1 px-3 py-2 rounded-full cursor-pointer hover:bg-foreground/10">
-                            Github <Image src="/images/arrow.svg" alt="sun_svg" width={24} height={24} />
-                        </a>
-                        <a className="flex justify-center items-center transition-colors duration-500 gap-1 px-3 py-2 rounded-full cursor-pointer hover:bg-foreground/10">
-                            Resume <Image src="/images/arrow.svg" alt="sun_svg" width={24} height={24} />
-                        </a>
-                        <ToggleTheme />
-                    </motion.div>
+                        <button onClick={() => { window.open(LINKS.github, "_blank") }} className="flex justify-center items-center  transition-colors duration-500 gap-1 px-3 py-2 rounded-full cursor-pointer hover:bg-foreground/10">
+                            Github <Image className="dark:invert rotate-[220deg]" src="/images/arrow.svg" alt="sun_svg" width={15} height={19} />
+                        </button>
+                        <button onClick={() => { window.open(LINKS.resume, "_blank") }} className="flex justify-center items-center transition-colors duration-500 gap-1 px-3 py-2 rounded-full cursor-pointer hover:bg-foreground/10">
+                            Resume <Image className="dark:invert rotate-[220deg]" src="/images/arrow.svg" alt="sun_svg" width={15} height={19} />
+                        </button>
+                        <ToggleTheme className={"dark:invert"} />
+                    </MotionDiv>
 
                     <button onClick={() => setIsOpen(!isOpen)} className={cn("relative group hidden csm:block")}>
                         <div className={cn("relative flex overflow-hidden items-center justify-center rounded-full w-[50px] h-[50px] transform transition-all duration-200")}>
@@ -116,7 +105,7 @@ export default () => {
                 {isOpen &&
                     <>
                         <div className="fixed inset-0 z-10 h-screen w-screen" onClick={() => setIsOpen(false)} />
-                        <motion.div
+                        <MotionDiv
                             className={cn("bg-foreground/10 z-30 backdrop-blur-md rounded-xl fixed flex pb-2 justify-center items-center text-center inset-0 h-[60svh] max-w-[90svw] max-h-[90svh] m-auto")}
                             initial={{ opacity: 0, y: -20 }}
                             animate={{ opacity: 1, y: 0, }}
@@ -141,7 +130,7 @@ export default () => {
                                 })
                                 }
                             </ul >
-                        </motion.div>
+                        </MotionDiv>
                     </>
                 }
 
