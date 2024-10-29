@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { MotionDiv } from '@/components/ui/motion-div';
 import React from "react";
 import { FlipWords } from "@/components/ui/flip-words";
 import Image from "next/image";
@@ -15,7 +15,7 @@ const Hero = () => {
     return (
         <section id='home' className={`${debug} min-h-screen pt-48 max-w-[100rem] px-5 mx-auto`}>
             <div className="grid grid-cols-2 grid-rows-2 csm:grid-cols-1 csm:grid-rows-4 ">
-                <motion.div
+                <MotionDiv
                     className={`${debug} flex-col space-y-9 csm:order-2`}
                     initial={{ opacity: 0, y: -50 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -52,15 +52,15 @@ const Hero = () => {
                             </Button>
                         </Link>
                     </div>
-                </motion.div>
+                </MotionDiv>
 
-                <motion.div
+                <MotionDiv
                     className={`${debug} flex justify-end items-center csm:order-1`}
                 >
                     <Image className="dark:invert" src="/images/laptop.svg" alt="laptop svg" width={510} height={500} />
-                </motion.div>
+                </MotionDiv>
 
-                <motion.div
+                <MotionDiv
                     className={`${debug} space-x-7 flex justify-start items-center csm:order-3`}
                 >
                     <div className="">SAY HELLO</div>
@@ -69,14 +69,14 @@ const Hero = () => {
                     <Image src="/images/whatsapp.svg" className="invert" width={30} height={100} alt=".." />
                     <Image src="/images/linkedin.svg" className="invert" width={30} height={100} alt=".." />
                     <Image src="/images/github.svg" className="invert" width={30} height={100} alt=".." />
-                </motion.div>
+                </MotionDiv>
 
-                <motion.div
+                <MotionDiv
                     className={`${debug} flex justify-center items-center csm:order-4`}
                 >
                     <Button>CONTACT ME </Button>
 
-                </motion.div>
+                </MotionDiv>
 
             </div>
         </section >

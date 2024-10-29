@@ -10,7 +10,8 @@ const config: Config = {
     theme: {
         extend: {
             screens: {
-                csm: { max: "955px" }
+                csm: { max: "955px" },
+                sm: { max: "640px" },
             },
             fontFamily: {
                 monte: ['var(--font-montserrat)', 'sans-serif'],
