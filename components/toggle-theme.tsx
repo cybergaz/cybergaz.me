@@ -28,8 +28,8 @@ const ToggleTheme = ({ className }: { className?: String }) => {
             {
                 isMounted() ?
                     (theme === "light" ?
-                        <Image src="/images/sun.svg" alt="sun_svg" width={24} height={24} /> : <Image src="/images/moon.svg" alt="sun_svg" width={24} height={24} />) :
-                    <Image src="/images/moon.svg" alt="sun_svg" width={24} height={24} />
+                        <Image src="/images/sun.svg" alt="sun_svg" width={17} height={17} /> : <Image src="/images/moon.svg" alt="sun_svg" width={17} height={17} />) :
+                    <Image src="/images/moon.svg" alt="sun_svg" width={17} height={17} />
             }
         </button >
     )
