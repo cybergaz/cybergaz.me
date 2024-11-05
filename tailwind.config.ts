@@ -11,6 +11,7 @@ const config: Config = {
         extend: {
             screens: {
                 csm: { max: "955px" },
+                cmid: { max: "1170px" },
                 sm: { max: "640px" },
             },
             fontFamily: {
