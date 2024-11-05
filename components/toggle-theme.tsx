@@ -21,15 +21,15 @@ const ToggleTheme = ({ className }: { className?: String }) => {
 
         <button
             onClick={toggleTheme}
-            className={cn("w-[1.6rem] ease hover:bg-foreground/5 ml-3 flex items-center justify-center rounded-full p-1 text-zinc-900 dark:text-zinc-300", className)}
+            className={cn("w-[1.6rem] ease hover:bg-foreground/10 ml-3 flex items-center justify-center rounded-full p-1 text-zinc-900 dark:text-zinc-300", className)}
             aria-label="theme-switcher"
         >
 
             {
                 isMounted() ?
                     (theme === "light" ?
-                        <Image src="/images/sun.svg" alt="sun_svg" width={17} height={17} /> : <Image src="/images/moon.svg" alt="sun_svg" width={17} height={17} />) :
-                    <Image src="/images/moon.svg" alt="sun_svg" width={17} height={17} />
+                        <Image src="/images/sun.svg" alt="sun_svg" className="dark:invert" width={17} height={17} /> : <Image src="/images/moon.svg" className="dark:invert" alt="sun_svg" width={17} height={17} />) :
+                    <Image src="/images/moon.svg" alt="sun_svg" className="dark:invert" width={17} height={17} />
             }
         </button >
     )
