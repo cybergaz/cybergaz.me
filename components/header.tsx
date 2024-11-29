@@ -16,9 +16,9 @@ export default () => {
     return (
         <>
             <header className="fixed z-40 w-screen px-5 sm:px-1 h-20 csm:h-[4.5rem] flex justify-between items-center font-monte font-medium text-sm " >
-                <nav className="flex justify-between items-center w-[105rem] mx-auto rounded-2xl px-5 sm:px-3 py-2 bg-foreground/[0.02] backdrop-blur shadow-md">
+                <nav className="flex justify-between items-center w-[105rem] mx-auto rounded-2xl px-5 sm:px-3 py-2 bg-foreground/[0.02] backdrop-blur-md shadow-md">
                     <Logo />
-                    <NavLinksContainer />
+                    <NavLinksContainer setIsOpen={setIsOpen} />
                     <ExtraLinks />
                     <MenuButton isOpen={isOpen} setIsOpen={setIsOpen} />
                 </nav>
@@ -40,18 +40,17 @@ const Logo: React.FC = () => (
     </MotionDiv>
 )
 
-const NavLinksContainer: React.FC = () => (
-    <MotionDiv
-        className="px-[0.3rem] py-3.5 border-[0.5px] border-foreground/[0.07] rounded-full csm:hidden "
-        initial={{ opacity: 0, scale: 0.85 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.3 }}
-    >
-        <NavLinks />
-    </MotionDiv>
+const NavLinksContainer: React.FC<{ setIsOpen: (isOpen: boolean) => void }> = ({ setIsOpen }) => (<MotionDiv
+    className="px-[0.3rem] py-3.5 border-[0.5px] border-foreground/[0.07] rounded-full csm:hidden "
+    initial={{ opacity: 0, scale: 0.85 }}
+    animate={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 0.3 }}
+>
+    <NavLinks setIsOpen={setIsOpen} />
+</MotionDiv>
 )
 
-const NavLinks: React.FC = () => (
+const NavLinks: React.FC<{ setIsOpen: (isOpen: boolean) => void }> = ({ setIsOpen }) => (
     <ul className={cn("relative flex csm:flex-col csm:space-y-6 items-center justify-center gap-x-3")}>
         {NAVLINKS.map(({ title, href }, i) => {
             const isActive = href === usePathname()
@@ -60,6 +59,7 @@ const NavLinks: React.FC = () => (
                     <div className="active:scale-95 csm:mb-0.5 transition-transform duration-300">
                         <Link
                             href={href}
+                            onClick={() => setIsOpen(false)}
                             className={cn('rounded-full underline-offset-2 px-[1.35rem] csm:px-6 z-20 py-[0.7rem] csm:py-2.5 hover:bg-foreground/[0.02] transition-all duration-300', isActive && "bg-foreground/5")}
                         >
                             {title}
@@ -118,12 +118,12 @@ const MobileNav: React.FC<{ setIsOpen: (isOpen: boolean) => void }> = ({ setIsOp
     <>
         <div className="fixed inset-0 z-20 h-screen w-screen " onClick={() => setIsOpen(false)} />
         <MotionDiv
-            className={cn("bg-foreground/10 z-30 backdrop-blur rounded-xl fixed flex gap-3.5 justify-center items-center text-center inset-0 h-[60svh] max-w-[90svw] max-h-[90svh] m-auto")}
+            className={cn("bg-foreground/10 z-30 backdrop-blur-md rounded-xl fixed flex gap-3.5 justify-center items-center text-center inset-0 h-[60svh] max-w-[90svw] max-h-[90svh] m-auto")}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0, }}
             transition={{ duration: 0.3 }}
         >
-            <NavLinks />
+            <NavLinks setIsOpen={setIsOpen} />
             <div className="w-[1px] bg-background h-[15svh] hidden sm:block" />
             <div className="sm:flex sm:flex-col sm:justify-center sm:items-center gap-2 will-change-auto hidden " >
                 <IconLink href={LINKS.github} label="Github" />

@@ -10,8 +10,8 @@ const config: Config = {
     theme: {
         extend: {
             screens: {
-                csm: { max: "955px" },
-                cmid: { max: "1170px" },
+                csm: { max: "957px" },
+                cmid: { max: "1177px" },
                 sm: { max: "640px" },
             },
             fontFamily: {
@@ -25,8 +25,14 @@ const config: Config = {
                 'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
             },
             animation: {
+                "background-position-spin":
+                    "background-position-spin 3000ms infinite alternate",
             },
             keyframes: {
+                "background-position-spin": {
+                    "0%": { backgroundPosition: "top center" },
+                    "100%": { backgroundPosition: "bottom center" },
+                },
             },
             colors: {
                 background: 'hsl(var(--background))',
