@@ -15,8 +15,8 @@ export default () => {
 
     return (
         <>
-            <header className="fixed z-40 w-screen px-5 sm:px-1 h-20 csm:h-[4.5rem] flex justify-between items-center font-monte font-medium text-sm " >
-                <nav className="flex justify-between items-center w-[105rem] mx-auto rounded-2xl px-5 sm:px-3 py-2 bg-foreground/[0.02] backdrop-blur-md shadow-md">
+            <header className="fixed z-40 w-screen px-5 mt-1 sm:px-2 h-20 csm:h-[4.5rem] flex justify-between items-center font-normal" >
+                <nav className="flex justify-between items-center w-[85rem] mx-auto rounded-2xl px-5 sm:px-3 py-2 bg-foreground/[0.02] backdrop-blur-md shadow-md dark:shadow-lg dark:shadow-blue-300/5">
                     <Logo />
                     <NavLinksContainer setIsOpen={setIsOpen} />
                     <ExtraLinks />
@@ -34,17 +34,17 @@ const Logo: React.FC = () => (
         className="flex justify-center items-center pr-56 csm:pr-1"
         initial={{ opacity: 0, x: -30 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.3 }}
+        transition={{ duration: 0.4 }}
     >
         <Link href="/" className="csm:w-[1.85rem] w-9 active:scale-95 transition-transform duration-300"> <Image className="grayscale hover:grayscale-0 transition-all duration-500" src="/favicon/favicon.ico" alt="site-logo" width={40} height={30} /> </Link>
     </MotionDiv>
 )
 
 const NavLinksContainer: React.FC<{ setIsOpen: (isOpen: boolean) => void }> = ({ setIsOpen }) => (<MotionDiv
-    className="px-[0.3rem] py-3.5 border-[0.5px] border-foreground/[0.07] rounded-full csm:hidden "
+    className="px-[0.3rem] py-[0.67rem] border-[0.5px] border-foreground/[0.07] rounded-full csm:hidden "
     initial={{ opacity: 0, scale: 0.85 }}
     animate={{ opacity: 1, scale: 1 }}
-    transition={{ duration: 0.3 }}
+    transition={{ duration: 0.5 }}
 >
     <NavLinks setIsOpen={setIsOpen} />
 </MotionDiv>
@@ -60,7 +60,7 @@ const NavLinks: React.FC<{ setIsOpen: (isOpen: boolean) => void }> = ({ setIsOpe
                         <Link
                             href={href}
                             onClick={() => setIsOpen(false)}
-                            className={cn('rounded-full underline-offset-2 px-[1.35rem] csm:px-6 z-20 py-[0.7rem] csm:py-2.5 hover:bg-foreground/[0.02] transition-all duration-300', isActive && "bg-foreground/5")}
+                            className={cn('rounded-full underline-offset-2 px-[1.35rem] csm:px-6 z-20 py-[0.5rem] csm:py-2.5 hover:bg-foreground/[0.02] transition-all duration-300', isActive && "bg-foreground/5")}
                         >
                             {title}
                         </Link>
@@ -78,7 +78,7 @@ const ExtraLinks: React.FC = () => (
         className="flex justify-center items-center gap-1 will-change-auto sm:hidden"
         initial={{ opacity: 0, x: 30 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.3 }}
+        transition={{ duration: 0.4 }}
     >
         <IconLink href={LINKS.github} label="Github" />
         <IconLink href={LINKS.resume} label="Resume" />

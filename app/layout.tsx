@@ -1,17 +1,49 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Montserrat } from "next/font/google";
+// import { Montserrat, Baloo_2 } from "next/font/google";
+import localFont from 'next/font/local'
 import "@/app/globals.css";
 import { ThemeProvider } from "next-themes"
-import { Footer } from "@/components/footer";
+import Footer from "@/components/footer";
 import Header from "@/components/header";
 
 import { SITE_URL, SITE_TITLE, SITE_DESCRIPTION, SITE_NAME, SITE_KEYWORDS } from "@/lib/constants"
 
-const montserrat = Montserrat({
-    subsets: ['latin'],
-    weight: ['100', '200', '300', '400', '500', '600', '700', '800'],
-    variable: '--font-montserrat'
+// const montserrat = Baloo_2({
+//     subsets: ['latin'],
+//     weight: ['400', '500', '600', '700', '800'],
+//     variable: '--font-montserrat'
+// })
+
+const baloo = localFont({
+    src: [
+        {
+            path: '../public/fonts/BalooRegular.woff2',
+            weight: '400',
+            style: 'normal',
+        },
+        {
+            path: '../public/fonts/BalooMedium.woff2',
+            weight: '500',
+            style: 'normal',
+        },
+        {
+            path: '../public/fonts/BalooSemiBold.woff2',
+            weight: '600',
+            style: 'normal',
+        },
+        {
+            path: '../public/fonts/BalooBold.woff2',
+            weight: '700',
+            style: 'normal',
+        },
+        {
+            path: '../public/fonts/BalooExtraBold.woff2',
+            weight: '800',
+            style: 'normal',
+        },
+    ],
+    variable: '--font-baloo'
 })
 
 export const metadata: Metadata = {
@@ -72,7 +104,7 @@ export default function RootLayout({
 }>) {
 
     return (
-        <html lang="en" className={`${montserrat.variable}`} suppressHydrationWarning>
+        <html lang="en" className={`${baloo.className}`} suppressHydrationWarning>
             <body className={""}>
                 <ThemeProvider attribute="class" defaultTheme="system" enableSystem >
                     {/* <AnimatedCursor */}

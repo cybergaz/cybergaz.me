@@ -16,6 +16,7 @@ const config: Config = {
             },
             fontFamily: {
                 monte: ['var(--font-montserrat)', 'sans-serif'],
+                baloo: ['var(--font-baloo)', 'sans-serif'],
             },
             rotate: {
                 '360': '360deg',
