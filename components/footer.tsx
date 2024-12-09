@@ -3,8 +3,8 @@ import Image from "next/image"
 export default () => {
     return (
 
-        <footer className=" mt-20 mb-5 sm:mb-20 px-5 sm:px-1 h-20 csm:h-[4.5rem] flex justify-between items-center font-baloo font-normal ">
-            <div className="flex sm:flex-col sm:gap-8 justify-between items-center w-[85rem] mx-auto rounded-2xl px-5 sm:px-3 py-2 bg-foreground/[0.03] backdrop-blur-sm shadow-md">
+        <footer className=" mt-20 sm:mt-32 mb-5 sm:mb-20 px-5 sm:px-2 h-20 csm:h-[4.5rem] flex justify-between items-center font-baloo font-normal ">
+            <div className="flex sm:flex-col sm:gap-8 justify-between items-center w-[80rem] mx-auto rounded-2xl px-5 sm:px-3 py-2 bg-foreground/[0.03] shadow-md">
 
                 <div>© 2024 Gaz</div>
                 <div className="flex flex-col">

@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import React, { useEffect, useState } from "react";
 
-const MotionImage = motion(NextImage);
+const MotionImage = motion.create(NextImage);
 
 export const ImagesSlider = ({
     images,

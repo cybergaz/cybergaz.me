@@ -24,8 +24,9 @@
     @apply bg-background text-foreground;
   }
 }
+
 html {
-  scroll-behavior: smooth;
+  @apply scroll-smooth;
 }
 
 .no-visible-scrollbar {

@@ -60,9 +60,10 @@ const Hero = () => {
 
                 <MotionDiv
                     className=" space-x-7 sm:space-x-0 flex sm:flex-col justify-start csm:justify-center items-center gap-x-5 gap-y-10 order-3"
-                    initial={{ opacity: 0, y: 60 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4, delay: 0.3 }}
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: 0.2 }}
                 >
                     <div className=""> SAY HELLO </div>
                     <div className="flex justify-center items-center gap-8 sm:gap-5">
@@ -76,9 +77,10 @@ const Hero = () => {
 
                 <MotionDiv
                     className=" flex justify-center items-center mb-28 order-4"
-                    initial={{ opacity: 0, y: -60 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4 }}
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: 0.2 }}
                 >
                     <a href="mailto:gaz.sync@gmail.com" target="_blank" >
                         <NeonGradientCard className="w-44 h-14 flex justify-center items-center font-semibold "> CONTACT ME </NeonGradientCard>
@@ -86,14 +88,19 @@ const Hero = () => {
                 </MotionDiv>
 
             </div>
-            <div className="mt-20 flex justify-center items-center">
+            <MotionDiv className="mt-20 flex justify-center items-center"
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.2 }}
+            >
                 <Link href="/about">
                     <Button className=" flex justify-center items-center gap-2 hover:gap-3 transition-all duration-200">
                         Next Page
                         <Image src="/images/arrow.svg" className="rotate-[270deg] dark:invert" width={20} height={20} alt="arrow-right" />
                     </Button>
                 </Link>
-            </div>
+            </MotionDiv>
 
         </section >
 
