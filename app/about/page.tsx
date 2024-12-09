@@ -11,7 +11,6 @@ export default function About() {
             <div className="w-screen h-60"></div>
 
             <div className="text-2xl">this page is unfinshed , and i'm currently building it</div>
-            <div>this page is unfinshed , and i'm currently building it</div>
             <div>in the mean time, you can visit my old portfolio <a className="text-blue-500" href="https://cybergaz.vercel.app" target="_blank">OLD PORTFOLIO</a></div>
         </section>
     );
