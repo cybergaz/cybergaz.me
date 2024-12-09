@@ -9,7 +9,7 @@ const Button: React.FC<ButtonProps> = ({ className, children, ...props }) => {
     return (
         <button
             className={cn(
-                'px-6 py-1.5 backdrop-blur-sm border dark:bg-blue-300/10 bg-blue-400/10 hover:bg-blue-400/20 dark:hover:bg-blue-400/20 border-blue-500/20 text-foreground mx-auto text-center rounded-full relative',
+                'px-6 py-1.5 border dark:bg-blue-300/10 bg-blue-400/10 hover:bg-blue-400/20 dark:hover:bg-blue-400/20 border-blue-500/20 text-foreground mx-auto text-center rounded-full relative',
                 className
             )}
             {...props}

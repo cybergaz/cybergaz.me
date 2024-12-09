@@ -121,7 +121,7 @@ export default function RootLayout({
                         <Image
                             width={1600}
                             height={600}
-                            className='fixed select-none -right-[44svw] sm:-right-[45svw] -top-[40svh] sm:-top-[10svh] sm:scale-150 -z-10'
+                            className='fixed select-none -right-[45svw] sm:-right-[45svw] -top-[40svh] sm:-top-[10svh] sm:scale-150 -z-10 brightness-[0.6] blur-md'
                             src='/images/docs-right.png'
                             alt=''
                             role='presentation'
@@ -130,13 +130,13 @@ export default function RootLayout({
                         <Image
                             width={1500}
                             height={600}
-                            className='fixed select-none -left-[30svw] sm:-left-[25svw] -bottom-[40svh] sm:-bottom-[5svh] sm:scale-150 -z-10'
+                            className='fixed select-none -left-[30svw] sm:-left-[25svw] -bottom-[40svh] sm:-bottom-[5svh] sm:scale-150 -z-10 brightness-[0.85] blur-lg'
                             src='/images/docs-left.png'
                             alt=''
                             role='presentation'
                             priority
                         />
-                        <div className="fixed h-screen w-screen bg-background/30 backdrop-blur-[10px] -z-[9]" />
+                        {/* <div className="fixed h-screen w-screen bg-background/30 backdrop-blur-[10px] -z-[9]" /> */}
 
                         <Header />
                         {children}
