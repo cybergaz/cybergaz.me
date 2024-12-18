@@ -1,0 +1,5 @@
+#  create a loading state for laptop images
+
+#  edit site description for every page
+
+#  put loading animations for pages and other things (skeleton for images)
