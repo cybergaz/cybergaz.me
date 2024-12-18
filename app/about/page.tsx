@@ -5,9 +5,11 @@ export default function About() {
         <section className=" pt-40 text-lg px-5 mx-auto flex flex-col justify-center items-center max-w-5xl min-w-72">
 
             <div className="text-3xl font-semibold py-5">WHO AM I</div>
-            <div>I'm <span className="text-blue-600 dark:text-blue-400">Krishan Kant</span> a self-driven, career-oriented software developer specializing in front-end development and open-source.
+            <div className="text-center">I'm <span className="text-blue-600 dark:text-blue-400">Krishan Kant</span> A self-driven & dedicated software developer specializing in <span className="underline decoration-blue-500 underline-offset-4">full-stack development</span> and a deep engagement in open-source innovation.
 
+                <br />
                 I strongly believe in continuous learning and improving myself, so I try my best to learn in any situation possible, unfavorable or not. To further expand my knowledge and enhance my development skills.</div>
+            <span className=" max-w-[80rem] -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-transparent via-blue-500/80 to-transparent transition-opacity duration-500 group-hover:opacity-40" />
             <div className="w-screen h-60"></div>
 
             <div className="text-2xl">this page is unfinshed , and i'm currently building it</div>
