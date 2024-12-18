@@ -46,15 +46,12 @@ export const FlipWords = ({
                     y: 0,
                 }}
                 transition={{
-                    type: "spring",
-                    stiffness: 100,
-                    damping: 10,
+                    type: "tween",
                 }}
                 exit={{
                     opacity: 0,
                     y: -20,
                     x: 20,
-                    filter: "blur(8px)",
                     position: "absolute",
                 }}
                 className={cn(
@@ -67,21 +64,15 @@ export const FlipWords = ({
                 {currentWord.split(" ").map((word, wordIndex) => (
                     <motion.span
                         key={word + wordIndex}
-                        initial={{ opacity: 0, y: 10, filter: "blur(8px)" }}
-                        animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                        transition={{
-                            delay: wordIndex * 0.3,
-                            duration: 0.3,
-                        }}
                         className="inline-block whitespace-nowrap"
                     >
                         {word.split("").map((letter, letterIndex) => (
                             <motion.span
                                 key={word + letterIndex}
-                                initial={{ opacity: 0, y: 10, filter: "blur(8px)" }}
-                                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                                initial={{ opacity: 0, y: 8 }}
+                                animate={{ opacity: 1, y: 0 }}
                                 transition={{
-                                    delay: wordIndex * 0.3 + letterIndex * 0.05,
+                                    delay: wordIndex * 0.1 + letterIndex * 0.03,
                                     duration: 0.2,
                                 }}
                                 className="inline-block"
