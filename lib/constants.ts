@@ -1,10 +1,10 @@
 export const isProduction = process.env.NODE_ENV === 'production'
 
-export const SITE_URL = isProduction ? 'https://github.com/cybergaz/portfolio' : 'http://localhost:3001'
-export const SITE_NAME = 'Gaz'
+export const SITE_URL = isProduction ? 'https://cybergaz.me' : 'http://localhost:3000'
+export const SITE_NAME = 'cybergaz'
 export const SITE_TITLE = 'Krishan Kant | Software Developer'
 export const SITE_DESCRIPTION = 'Krishan Kant • Software Developer • Open-Source Enthusiast'
-export const SITE_KEYWORDS = ['cybergaz', 'gaz', 'krishan kant', 'portfolio', 'about cybergaz', 'Next.js', 'React', 'TypeScript']
+export const SITE_KEYWORDS = ['cybergaz', 'gaz', 'cybergaz.me', 'krishan kant', 'portfolio', 'about cybergaz', 'Next.js', 'React', 'TypeScript']
 
 export const LINKS = {
     github: 'https://github.com/cybergaz',
