@@ -16,7 +16,7 @@ export default () => {
     return (
         <>
             <header className="fixed z-40 w-screen px-5 mt-1 sm:px-2 h-20 csm:h-[4.5rem] flex justify-between items-center" >
-                <nav className="flex justify-between items-center w-[80rem] mx-auto rounded-2xl px-5 sm:px-3 py-2.5 csm:py-2 bg-foreground/[0.02] backdrop-blur-md shadow-md">
+                <nav className="flex justify-between items-center w-[80rem] mx-auto rounded-2xl px-5 sm:px-3 py-2.5 csm:py-2 bg-foreground/[0.03] backdrop-blur-md shadow-md">
                     <Logo />
                     <NavLinksContainer setIsOpen={setIsOpen} />
                     <ExtraLinks />
@@ -60,7 +60,7 @@ const NavLinks: React.FC<{ setIsOpen: (isOpen: boolean) => void }> = ({ setIsOpe
                         <Link
                             href={href}
                             onClick={() => setIsOpen(false)}
-                            className={cn('rounded-full underline-offset-2 px-[1.35rem] csm:px-6 z-20 py-[0.5rem] csm:py-2.5 hover:bg-foreground/[0.02] transition-all duration-300', isActive && "bg-foreground/5")}
+                            className={cn('rounded-full underline-offset-2 px-[1.35rem] csm:px-6 z-20 py-[0.5rem] csm:py-2.5 hover:bg-foreground/[0.02] text-foreground/60 transition-all duration-300', isActive && "bg-foreground/5 text-foreground")}
                         >
                             {title}
                         </Link>
