@@ -24,7 +24,7 @@ const Hero = () => {
                     transition={{ duration: 0.4, delay: 0.1 }}
                 >
                     <Image className="dark:invert " src="/images/laptop.svg" alt="laptop svg" width={510} height={500} />
-                    <ImagesSlider className="absolute inset-0 top-[0.28rem] sm:top-[0.2rem] right-[0.08rem] mx-auto w-[80%] h-[92%]" images={images} width={800} height={800} overlay={false}> loading... </ImagesSlider>
+                    {/* <ImagesSlider className="absolute inset-0 top-[0.28rem] sm:top-[0.2rem] right-[0.08rem] mx-auto w-[80%] h-[92%]" images={images} width={800} height={800} overlay={false}> loading... </ImagesSlider> */}
                     <div className="absolute font-baloo text-lg text-white csm:text-base opacity-0 hover:opacity-100 flex justify-center items-center inset-0 top-[0.3rem] right-[0.1rem] mx-auto w-[80%] h-[91.8%] backdrop-blur-sm transition-all duration-500" > my development environment</div> </MotionDiv>
 
                 <div className=" order-2 sm:-mt-14 -mt-8 flex flex-col justify-center items-center space-y-9" >
@@ -40,7 +40,7 @@ const Hero = () => {
                             <span>, I'm </span>
                         </div>
                         <div className="flex justify-center text-6xl cmid:text-5xl [@media(max-width:640px)]:text-4xl -ml-0.5 font-semibold font-baloo text-neutral-600 dark:text-neutral-400">
-                            <FlipWords words={names} className="ml-5 sm:ml-1 " duration={5000} /> <br />
+                            {/* <FlipWords words={names} className="ml-5 sm:ml-1 " duration={5000} /> <br /> */}
                         </div>
                     </MotionDiv>
                     <MotionDiv
