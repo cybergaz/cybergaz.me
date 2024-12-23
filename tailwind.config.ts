@@ -34,7 +34,10 @@ const config: Config = {
         }
     },
 
-    plugins: [require('tailwindcss-motion')],
+    plugins: [
+        require('tailwindcss-motion'),
+        require('tailwindcss-intersect')
+    ],
 };
 
 export default config;
