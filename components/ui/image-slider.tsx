@@ -48,6 +48,9 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images, className }) => {
                         onClick={prevImage}
                         className="absolute sm:scale-75 top-[43%] left-2 -translate-y-1/2 text-white mix-blend-plus-lighter p-2 rounded-full"
                         neon={false}
+                        aria-label="previous image"
+                        role="button"
+                        title="prevImage"
                     >
                         ◀
                     </Button>
@@ -55,6 +58,9 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images, className }) => {
                         onClick={nextImage}
                         className="absolute sm:scale-75 top-[43%] right-2 -translate-y-1/2 text-white mix-blend-plus-lighter p-2 rounded-full"
                         neon={false}
+                        aria-label="next image"
+                        role="button"
+                        title="nextImage"
                     >
                         ▶
                     </Button>

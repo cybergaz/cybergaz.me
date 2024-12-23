@@ -66,7 +66,7 @@ export default function Home() {
                     // transition={{ duration: 0.5, delay: 0.6 }}
                     >
                         <Link href="/about" className="sm:scale-50">
-                            <Button> About Me </Button>
+                            <Button aria-labelledby="labeldiv" aria-label="AboutMe" role="button" > About Me </Button>
                         </Link>
                     </div>
 
@@ -101,7 +101,7 @@ export default function Home() {
                     >
                         <a href="mailto:gaz.sync@gmail.com" target="_blank" >
                             <div className="bg-gradient-to-br active:scale-90 sm:scale-90 transition-transform duration-300 shadow-2xl shadow-violet-700 hover:hover:shadow-[#D920AF]/80 from-foreground via-background to-blue-500 p-[3px] rounded-[0.9rem] flex justify-center items-center">
-                                <button className=" w-44 h-14 -mt-[0.1px] flex justify-center items-center font-semibold rounded-xl bg-background"> CONTACT ME </button>
+                                <button aria-label="contact me" role="button" className=" w-44 h-14 -mt-[0.1px] flex justify-center items-center font-semibold rounded-xl bg-background"> CONTACT ME </button>
                             </div>
                         </a>
                     </div>
@@ -116,7 +116,7 @@ export default function Home() {
             // transition={{ duration: 0.4, delay: 0.2 }}
             >
                 <Link href="/about" className="sm:scale-90">
-                    <Button className=" flex justify-center items-center gap-2 hover:gap-3 transition-all duration-200">
+                    <Button aria-label="next Page" role="button" title="next page" className=" flex justify-center items-center gap-2 hover:gap-3 transition-all duration-200">
                         Next Page
                         <Image src="/images/arrow.svg" className="rotate-[270deg] dark:invert" width={20} height={20} alt="arrow-right" />
                     </Button>
