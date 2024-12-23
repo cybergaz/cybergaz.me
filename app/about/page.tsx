@@ -5,7 +5,6 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 export default function About() {
-    const images = ["/images/ss.png", "/images/ss1.png", "/images/ss2.png", "/images/ss3.png", "/images/ss4.png"];
     return (
         <section className=" pt-40 text-lg px-5 mx-auto flex flex-col justify-center items-center gap-8 max-w-6xl min-w-72">
 

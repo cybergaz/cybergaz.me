@@ -5,7 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { useState } from "react"
 import { ToggleTheme } from "@/components/toggle-theme"
-// import { MotionDiv } from '@/components/ui/motion-div';
+import { MotionDiv } from '@/components/ui/motion-div';
 import { cn } from "@/lib/utils"
 import { LINKS, NAVLINKS } from "@/lib/constants";
 import { usePathname } from "next/navigation"
@@ -30,27 +30,26 @@ export default () => {
 }
 
 const Logo: React.FC = () => (
-    <div
-        className="motion-preset-slide-right-lg motion-delay-100 motion-duration-300 flex justify-center items-center pr-56 csm:pr-1"
-    // initial={{ opacity: 0, x: -30 }}
-    // animate={{ opacity: 1, x: 0 }}
-    // transition={{ duration: 0.4 }}
+    <MotionDiv
+        className="flex justify-center items-center pr-56 csm:pr-1"
+        initial={{ opacity: 0, x: -30 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.4 }}
     >
         <Link href="/" className="csm:w-[1.85rem] w-9 active:scale-95 transition-transform duration-300">
             <Image className="grayscale hover:grayscale-0 transition-all duration-500" src="/favicon/favicon.ico" alt="site-logo" width={40} height={30} priority />
         </Link>
-    </div>
+    </MotionDiv>
 )
 
-const NavLinksContainer: React.FC<{ setIsOpen: (isOpen: boolean) => void }> = ({ setIsOpen }) => (
-    <div
-        className="motion-preset-pop motion-delay-200 motion-ease-in-out motion-duration-300 px-[0.3rem] py-[0.67rem] border-[0.5px] border-foreground/[0.07] rounded-full csm:hidden "
-    // initial={{ opacity: 0, scale: 0.85 }}
-    // animate={{ opacity: 1, scale: 1 }}
-    // transition={{ duration: 0.5 }}
-    >
-        <NavLinks setIsOpen={setIsOpen} />
-    </div>
+const NavLinksContainer: React.FC<{ setIsOpen: (isOpen: boolean) => void }> = ({ setIsOpen }) => (<MotionDiv
+    className="px-[0.3rem] py-[0.67rem] border-[0.5px] border-foreground/[0.07] rounded-full csm:hidden "
+    initial={{ opacity: 0, scale: 0.85 }}
+    animate={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 0.5 }}
+>
+    <NavLinks setIsOpen={setIsOpen} />
+</MotionDiv>
 )
 
 const NavLinks: React.FC<{ setIsOpen: (isOpen: boolean) => void }> = ({ setIsOpen }) => (
@@ -77,16 +76,16 @@ const NavLinks: React.FC<{ setIsOpen: (isOpen: boolean) => void }> = ({ setIsOpe
 )
 
 const ExtraLinks: React.FC = () => (
-    <div
-        className="motion-preset-slide-left-lg motion-delay-100 motion-duration-300 flex justify-center items-center gap-1 will-change-auto sm:hidden"
-    // initial={{ opacity: 0, x: 30 }}
-    // animate={{ opacity: 1, x: 0 }}
-    // transition={{ duration: 0.4 }}
+    <MotionDiv
+        className="flex justify-center items-center gap-1 will-change-auto sm:hidden"
+        initial={{ opacity: 0, x: 30 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.4 }}
     >
         <IconLink href={LINKS.github} label="Github" />
         <IconLink href={LINKS.resume} label="Resume" />
         <ToggleTheme />
-    </div>
+    </MotionDiv>
 )
 
 const IconLink: React.FC<{ href: string; label: string }> = ({ href, label }) => (
@@ -100,7 +99,7 @@ const IconLink: React.FC<{ href: string; label: string }> = ({ href, label }) =>
 );
 
 const MenuButton: React.FC<{ isOpen: boolean, setIsOpen: (isOpen: boolean) => void }> = ({ isOpen, setIsOpen }) => (
-    <button onClick={() => setIsOpen(!isOpen)} className={cn("motion-preset-slide-left-lg motion-delay-100 motion-duration-1000 relative group hidden csm:block")}>
+    <button onClick={() => setIsOpen(!isOpen)} className={cn("relative group hidden csm:block")}>
         <div className={cn("relative flex overflow-hidden items-center justify-center rounded-full w-[50px] h-[50px] transform transition-all duration-200")}>
             <div className={cn("flex flex-col justify-between w-[14px] h-[14px] transform transition-all duration-300 origin-center")}>
 
@@ -120,11 +119,11 @@ const MenuButton: React.FC<{ isOpen: boolean, setIsOpen: (isOpen: boolean) => vo
 const MobileNav: React.FC<{ setIsOpen: (isOpen: boolean) => void }> = ({ setIsOpen }) => (
     <>
         <div className="fixed inset-0 z-20 h-screen w-screen " onClick={() => setIsOpen(false)} />
-        <div
-            className={cn(" motion-preset-slide-down-sm bg-foreground/10 z-30 backdrop-blur-md rounded-xl fixed flex gap-3.5 justify-center items-center text-center inset-0 h-[60svh] max-w-[90svw] max-h-[90svh] m-auto")}
-        // initial={{ opacity: 0, y: -20 }}
-        // animate={{ opacity: 1, y: 0, }}
-        // transition={{ duration: 0.3 }}
+        <MotionDiv
+            className={cn("bg-foreground/10 z-30 backdrop-blur-md rounded-xl fixed flex gap-3.5 justify-center items-center text-center inset-0 h-[60svh] max-w-[90svw] max-h-[90svh] m-auto")}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0, }}
+            transition={{ duration: 0.3 }}
         >
             <NavLinks setIsOpen={setIsOpen} />
             <div className="w-[1px] bg-background h-[15svh] hidden sm:block" />
@@ -133,6 +132,6 @@ const MobileNav: React.FC<{ setIsOpen: (isOpen: boolean) => void }> = ({ setIsOp
                 <IconLink href={LINKS.resume} label="Resume" />
                 <ToggleTheme className={"ml-0"} />
             </div>
-        </div>
+        </MotionDiv>
     </>
 )
