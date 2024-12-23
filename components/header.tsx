@@ -15,7 +15,7 @@ export default () => {
 
     return (
         <>
-            <header className="fixed z-40 w-screen px-5 mt-1 sm:px-2 h-20 csm:h-[4.5rem] flex justify-between items-center" >
+            <header className="fixed z-40 w-screen px-5 mt-1 sm:px-2 h-20 csm:h-[4.5rem] flex justify-between items-center text-base" >
                 <nav className="flex justify-between items-center w-[80rem] mx-auto rounded-2xl px-5 sm:px-3 py-2.5 csm:py-2 bg-foreground/[0.03] backdrop-blur-md shadow-md">
                     <Logo />
                     <NavLinksContainer setIsOpen={setIsOpen} />
@@ -36,7 +36,9 @@ const Logo: React.FC = () => (
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.4 }}
     >
-        <Link href="/" className="csm:w-[1.85rem] w-9 active:scale-95 transition-transform duration-300"> <Image className="grayscale hover:grayscale-0 transition-all duration-500" src="/favicon/favicon.ico" alt="site-logo" width={40} height={30} /> </Link>
+        <Link href="/" className="csm:w-[1.85rem] w-9 active:scale-95 transition-transform duration-300">
+            <Image className="grayscale hover:grayscale-0 transition-all duration-500" src="/favicon/favicon.ico" alt="site-logo" width={40} height={30} priority />
+        </Link>
     </MotionDiv>
 )
 

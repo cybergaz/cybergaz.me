@@ -8,6 +8,7 @@ import Footer from "@/components/footer";
 import Header from "@/components/header";
 
 import { SITE_URL, SITE_TITLE, SITE_DESCRIPTION, SITE_NAME, SITE_KEYWORDS } from "@/lib/constants"
+import Preload from "@/components/preload";
 
 // const montserrat = Baloo_2({
 //     subsets: ['latin'],
@@ -73,7 +74,7 @@ export const metadata: Metadata = {
         creator: '@gaz_guine',
     },
     keywords: SITE_KEYWORDS,
-    creator: 'cyber_gaz',
+    creator: 'cybergaz',
     openGraph: {
         url: SITE_URL,
         type: 'website',
@@ -107,15 +108,6 @@ export default function RootLayout({
         <html lang="en" className={`${baloo.className}`} suppressHydrationWarning>
             <body className={""}>
                 <ThemeProvider attribute="class" defaultTheme="system" enableSystem >
-                    {/* <AnimatedCursor */}
-                    {/*     innerSize={8} */}
-                    {/*     outerSize={35} */}
-                    {/*     color='100, 100, 220' */}
-                    {/*     outerAlpha={0.1} */}
-                    {/*     innerScale={2} */}
-                    {/*     outerScale={2} */}
-                    {/**/}
-                    {/* /> */}
 
                     <main className="relative">
                         <Image
@@ -124,7 +116,6 @@ export default function RootLayout({
                             className='fixed select-none -right-[43svw] sm:-right-[45svw] -top-[40svh] sm:-top-[10svh] sm:scale-150 -z-10 brightness-[0.6] blur-md'
                             src='/images/docs-right.png'
                             alt=''
-                            role='presentation'
                             priority
                         />
                         <Image
@@ -133,14 +124,15 @@ export default function RootLayout({
                             className='fixed select-none -left-[30svw] sm:-left-[25svw] -bottom-[40svh] sm:-bottom-[5svh] sm:scale-150 -z-10 brightness-[0.85] blur-lg'
                             src='/images/docs-left.png'
                             alt=''
-                            role='presentation'
                             priority
                         />
                         {/* <div className="fixed h-screen w-screen bg-background/30 backdrop-blur-[10px] -z-[9]" /> */}
 
-                        <Header />
-                        {children}
-                        <Footer />
+                        <Preload>
+                            <Header />
+                            {children}
+                            <Footer />
+                        </Preload>
 
                     </main>
                 </ThemeProvider>

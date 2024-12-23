@@ -1,8 +1,11 @@
 import AboutMe from "@/components/about/about-me";
+import ImageSlider from "@/components/ui/image-slider";
+import Spinner from "@/components/ui/spinner";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 export default function About() {
+    const images = ["/images/ss.png", "/images/ss1.png", "/images/ss2.png", "/images/ss3.png", "/images/ss4.png"];
     return (
         <section className=" pt-40 text-lg px-5 mx-auto flex flex-col justify-center items-center gap-8 max-w-6xl min-w-72">
 
@@ -15,7 +18,7 @@ export default function About() {
             <div className="w-screen h-60"></div>
 
             <div className="text-2xl">this page is unfinshed , and i'm currently building it</div>
-            <div>in the mean time, you can visit my old portfolio <a className="text-blue-500" href="https://cybergaz.vercel.app" target="_blank">OLD PORTFOLIO</a></div>
+            <div>in the mean time, you can visit my old portfolio <a className="text-blue-500" href="https://cybergaz-old.vercel.app" target="_blank">OLD PORTFOLIO</a></div>
 
 
 

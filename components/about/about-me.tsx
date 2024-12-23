@@ -16,7 +16,7 @@ const AboutMe = () => {
                 <p> In my spare time, I enjoy exploring new technologies and building interesting projects. And when I’m not at the computer, you’ll find me cooking up a storm, catching a movie, or keeping fit with regular workouts. </p>
             </div>
             <div className="p-5 ml-32 csm:ml-0 csm:mb-5 flex justify-center items-center ">
-                <button className={cn("p-12 csm:p-8 w-40 csm:w-28 h-40 csm:h-28 rounded-full bg-background/10 shadow-2xl shadow-violet-700/80 flex justify-end items-end relative",)} onClick={() => SetClicked(!clicked)}>
+                <button className={cn("p-12 csm:p-8 w-40 csm:w-28 h-40 csm:h-28 rounded-full bg-background/10 shadow-2xl shadow-violet-700/80 hover:shadow-[#D920AF]/80 transition-all duration-500 flex justify-end items-end relative",)} onClick={() => SetClicked(!clicked)}>
                     <Image width={200} height={200} src="/favicon/favicon.ico" alt="Logo" className={cn("  transition-all duration-700", clicked ? "scale-75 grayscale -translate-x-6 csm:-translate-x-4" : "translate-x-0")} />
                     <span className={cn("absolute transition-all duration-700 font-medium text-5xl csm:text-3xl opacity-0 mb-[0.3rem] csm:mb-0.5", clicked ? "opacity-100 translate-x-4 csm:translate-x-2" : "-translate-x-6")}> az </span>
                 </button>

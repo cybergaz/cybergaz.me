@@ -25,16 +25,8 @@ const config: Config = {
                 'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
                 'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
             },
-            animation: {
-                "background-position-spin":
-                    "background-position-spin 3000ms infinite alternate",
-            },
-            keyframes: {
-                "background-position-spin": {
-                    "0%": { backgroundPosition: "top center" },
-                    "100%": { backgroundPosition: "bottom center" },
-                },
-            },
+            animation: {},
+            keyframes: {},
             colors: {
                 background: 'hsl(var(--background))',
                 foreground: 'hsl(var(--foreground))',
@@ -42,7 +34,7 @@ const config: Config = {
         }
     },
 
-    plugins: [],
+    plugins: [require('tailwindcss-motion')],
 };
 
 export default config;
