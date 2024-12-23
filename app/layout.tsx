@@ -128,11 +128,11 @@ export default function RootLayout({
                         />
                         {/* <div className="fixed h-screen w-screen bg-background/30 backdrop-blur-[10px] -z-[9]" /> */}
 
-                        <Preload>
-                            <Header />
-                            {children}
-                            <Footer />
-                        </Preload>
+                        {/* <Preload> */}
+                        <Header />
+                        {children}
+                        <Footer />
+                        {/* </Preload> */}
 
                     </main>
                 </ThemeProvider>

@@ -31,7 +31,7 @@ export default () => {
 
 const Logo: React.FC = () => (
     <div
-        className="motion-preset-slide-right-lg motion-delay-100 motion-duration-1000 flex justify-center items-center pr-56 csm:pr-1"
+        className="motion-preset-slide-right-lg motion-delay-100 motion-duration-300 flex justify-center items-center pr-56 csm:pr-1"
     // initial={{ opacity: 0, x: -30 }}
     // animate={{ opacity: 1, x: 0 }}
     // transition={{ duration: 0.4 }}
@@ -44,7 +44,7 @@ const Logo: React.FC = () => (
 
 const NavLinksContainer: React.FC<{ setIsOpen: (isOpen: boolean) => void }> = ({ setIsOpen }) => (
     <div
-        className="motion-preset-pop motion-delay-200 motion-ease-in-out motion-duration-1000 px-[0.3rem] py-[0.67rem] border-[0.5px] border-foreground/[0.07] rounded-full csm:hidden "
+        className="motion-preset-pop motion-delay-200 motion-ease-in-out motion-duration-300 px-[0.3rem] py-[0.67rem] border-[0.5px] border-foreground/[0.07] rounded-full csm:hidden "
     // initial={{ opacity: 0, scale: 0.85 }}
     // animate={{ opacity: 1, scale: 1 }}
     // transition={{ duration: 0.5 }}
@@ -78,7 +78,7 @@ const NavLinks: React.FC<{ setIsOpen: (isOpen: boolean) => void }> = ({ setIsOpe
 
 const ExtraLinks: React.FC = () => (
     <div
-        className="motion-preset-slide-left-lg motion-delay-100 motion-duration-1000 flex justify-center items-center gap-1 will-change-auto sm:hidden"
+        className="motion-preset-slide-left-lg motion-delay-100 motion-duration-300 flex justify-center items-center gap-1 will-change-auto sm:hidden"
     // initial={{ opacity: 0, x: 30 }}
     // animate={{ opacity: 1, x: 0 }}
     // transition={{ duration: 0.4 }}

@@ -60,7 +60,7 @@ export default function Home() {
                         </div>
                     </div>
                     <div
-                        className="motion-preset-slide-up-lg motion-ease-spring-bounciest motion-delay-700 motion-duration-1000"
+                        className="motion-preset-slide-up-lg motion-delay-700 motion-duration-1000"
                     // initial={{ opacity: 0, y: 50 }}
                     // animate={{ opacity: 1, y: 0 }}
                     // transition={{ duration: 0.5, delay: 0.6 }}
@@ -74,7 +74,7 @@ export default function Home() {
 
                 <ObserverProvider>
                     <div
-                        className="intersect-once intersect:motion-preset-slide-right-md motion-delay-0 motion-duration-1000 space-x-7 sm:space-x-0 flex sm:flex-col justify-start csm:justify-center items-center gap-x-5 gap-y-10 order-3"
+                        className="intersect-once intersect:motion-preset-slide-right-md motion-duration-1000 space-x-7 sm:space-x-0 flex sm:flex-col justify-start csm:justify-center items-center gap-x-5 gap-y-10 order-3"
                     // initial={{ opacity: 0, x: -50 }}
                     // whileInView={{ opacity: 1, x: 0 }}
                     // viewport={{ once: true }}
@@ -93,7 +93,7 @@ export default function Home() {
 
 
                     <div
-                        className="intersect-once intersect:motion-preset-slide-left-md motion-delay-200 motion-duration-1000 flex justify-center items-center mb-28 order-4"
+                        className="intersect-once intersect:motion-preset-slide-left-md motion-duration-1000 flex justify-center items-center mb-28 order-4"
                     // initial={{ opacity: 0, x: 50 }}
                     // whileInView={{ opacity: 1, x: 0 }}
                     // viewport={{ once: true }}
@@ -109,7 +109,7 @@ export default function Home() {
                 </ObserverProvider>
             </div>
             <div
-                className="intersect-once intersect:motion-preset-slide-right-md motion-delay-300 motion-duration-1000 mt-20 flex justify-center items-center"
+                className="intersect-once intersect:motion-preset-slide-right-sm motion-duration-1000 mt-20 flex justify-center items-center"
             // initial={{ opacity: 0, x: -50 }}
             // whileInView={{ opacity: 1, x: 0 }}
             // viewport={{ once: true }}
