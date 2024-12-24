@@ -20,7 +20,7 @@ export default function Home() {
         <section className=" pt-44 sm:pt-32 max-w-6xl px-5 mx-auto font-baloo font-normal text-lg">
             <div className="flex flex-col gap-32 justify-center items-center">
                 <div
-                    className=" motion-blur-in-md motion-delay-700 motion-duration-1000 order-1 relative place-self-center "
+                    className=" motion-preset-blur-down-lg motion-delay-500 motion-duration-1000 order-1 relative place-self-center "
                 // initial={{ opacity: 0, y: -60 }}
                 // animate={{ opacity: 1, y: 0 }}
                 // transition={{ duration: 0.4, delay: 0.1 }}
