@@ -33,7 +33,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images, className }) => {
                 }
                 <Image
                     width={1000}
-                    height={500}
+                    height={562}
                     src={images[currentIndex]}
                     alt={`Slide ${currentIndex + 1}`}
                     className=""

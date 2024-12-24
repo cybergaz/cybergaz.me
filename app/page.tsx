@@ -20,26 +20,26 @@ export default function Home() {
         <section className=" pt-44 sm:pt-32 max-w-6xl px-5 mx-auto font-baloo font-normal text-lg">
             <div className="flex flex-col gap-32 justify-center items-center">
                 <div
-                    className=" motion-preset-blur-down-lg motion-delay-500 motion-duration-1000 order-1 relative place-self-center "
+                    className=" motion-blur-in-md motion-delay-700 motion-duration-1000 order-1 relative place-self-center "
                 // initial={{ opacity: 0, y: -60 }}
                 // animate={{ opacity: 1, y: 0 }}
                 // transition={{ duration: 0.4, delay: 0.1 }}
                 >
-                    <Image className="dark:invert bg-transparent max-h-[18rem]" src="/images/laptop.svg" alt="laptop svg" width={510} height={500} />
-                    <ImagesSlider className="absolute inset-0 w-[80.5%] top-[1.5rem] sm:top-[8.3%] sm:left-0" images={images} />
+                    <Image className="dark:invert bg-transparent max-h-[18rem] sm:max-h-[51.5svw]" src="/images/laptop.svg" alt="laptop svg" width={510} height={500} />
+                    <ImagesSlider className="absolute inset-0 w-[80.5%] h-auto top-[1.5rem] sm:top-[8.3%] sm:left-0" images={images} />
                     {/* <div className="absolute font-baloo text-lg text-white csm:text-base opacity-0 hover:opacity-100 flex justify-center items-center inset-0 top-[0.3rem] right-[0.1rem] mx-auto w-[80%] h-[91.8%] backdrop-blur-sm transition-all duration-500" > my development environment</div> */}
                 </div>
 
-                <div className=" order-2 sm:-mt-14 -mt-8 flex flex-col justify-center items-center gap-10" >
+                <div className=" order-2 sm:-mt-20 -mt-8 flex flex-col justify-center items-center gap-10 sm:gap-8" >
                     <div
-                        className="motion-preset-slide-up-lg w-full motion-delay-100 motion-duration-1000 flex flex-col justify-center items-center space-y-9"
+                        className="motion-preset-slide-up-lg w-full motion-delay-100 motion-duration-1000 flex flex-col justify-center items-center gap-8 sm:gap-5"
                     // initial={{ opacity: 0, y: 60 }}
                     // animate={{ opacity: 1, y: 0 }}
                     // transition={{ duration: 0.5, delay: 0.3 }}
                     >
                         <div className="flex justify-center items-center space-x-2 text-2xl sm:text-xl font-nunito font-bold text-zinc-400 " >
                             <span> Hi </span>
-                            <Image src="/images/handwave.svg" className="stroke-sky-50 dark:invert bg-transparent" width={25} height={25} alt="wave hand" />
+                            <Image src="/images/handwave.svg" className="stroke-sky-50 dark:invert bg-transparent sm:w-5" width={25} height={25} alt="wave hand" />
                             <span>, I'm </span>
                         </div>
                         <div className="flex w-full justify-center text-6xl cmid:text-5xl [@media(max-width:640px)]:text-4xl -ml-0.5 font-semibold font-baloo text-neutral-600 dark:text-neutral-400">
