@@ -9,14 +9,14 @@ export default () => {
                 <div>© 2024 Gaz</div>
                 <div className="flex flex-col">
                     <span> listening to </span>
-                    <Image src="/images/spotify.svg" className="dark:invert" width={20} height={20} alt="spotify" />
+                    <Image src="/images/spotify.svg" className="dark:invert bg-transparent" width={20} height={20} alt="spotify" />
                 </div>
                 <div>
                     <div className="flex justify-start py-1 items-center gap-5">
-                        <Image src="/images/mail.svg" className="dark:invert" width={20} height={20} alt="mail" /> gaz.sync@gmail.com
+                        <Image src="/images/mail.svg" className="dark:invert bg-transparent" width={20} height={20} alt="mail" /> gaz.sync@gmail.com
                     </div>
                     <div className="flex justify-start py-1 items-center gap-5">
-                        <Image src="/images/call.svg" className="dark:invert" width={20} height={20} alt="call" /> +91 8534946840
+                        <Image src="/images/call.svg" className="dark:invert bg-transparent" width={20} height={20} alt="call" /> +91 8534946840
                     </div>
                 </div>
             </div>
