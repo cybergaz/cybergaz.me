@@ -20,7 +20,7 @@ export default function Home() {
         <section className=" pt-44 sm:pt-32 max-w-6xl px-5 mx-auto font-baloo font-normal text-lg">
             <div className="flex flex-col gap-32 justify-center items-center">
                 <div
-                    className=" motion-blur-in-sm motion-delay-700 motion-duration-1000 motion-ease-out order-1 relative place-self-center "
+                    className="motion-preset-fade-md order-1 relative place-self-center "
                 // initial={{ opacity: 0, y: -60 }}
                 // animate={{ opacity: 1, y: 0 }}
                 // transition={{ duration: 0.4, delay: 0.1 }}
@@ -32,7 +32,7 @@ export default function Home() {
 
                 <div className=" order-2 sm:-mt-14 -mt-8 flex flex-col justify-center items-center gap-10" >
                     <div
-                        className="motion-preset-slide-up-lg w-full motion-delay-100 motion-duration-1000 flex flex-col justify-center items-center space-y-9"
+                        className="motion-preset-slide-up-sm w-full motion-delay-100 motion-duration-500 flex flex-col justify-center items-center space-y-9"
                     // initial={{ opacity: 0, y: 60 }}
                     // animate={{ opacity: 1, y: 0 }}
                     // transition={{ duration: 0.5, delay: 0.3 }}
@@ -48,7 +48,7 @@ export default function Home() {
                         </div>
                     </div>
                     <div
-                        className=" motion-blur-in-md motion-delay-700 motion-duration-1000 flex flex-col justify-center items-center text-2xl csm:text-center [@media(max-width:640px)]:text-left sm:text-xl csm:leading-8 leading-9 font-baloo dark:text-neutral-400 "
+                        className=" motion-blur-in-sm motion-duration-100 flex flex-col justify-center items-center text-2xl csm:text-center [@media(max-width:640px)]:text-left sm:text-xl csm:leading-8 leading-9 font-baloo dark:text-neutral-400 "
                     // initial={{ opacity: 0, y: 50 }}
                     // animate={{ opacity: 1, y: 0 }}
                     // transition={{ duration: 0.5, delay: 0.5 }}
@@ -62,7 +62,7 @@ export default function Home() {
                         </div>
                     </div>
                     <div
-                        className="sm:scale-90 motion-preset-slide-up-lg motion-delay-100 motion-duration-1000"
+                        className="sm:scale-90 motion-preset-slide-up-md motion-duration-700"
                     // initial={{ opacity: 0, y: 50 }}
                     // animate={{ opacity: 1, y: 0 }}
                     // transition={{ duration: 0.5, delay: 0.6 }}
