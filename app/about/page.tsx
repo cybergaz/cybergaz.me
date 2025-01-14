@@ -5,12 +5,13 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 export default function About() {
+
     return (
         <section className=" pt-40 text-lg px-5 mx-auto flex flex-col justify-center items-center gap-8 max-w-6xl min-w-72">
 
             <div className="text-3xl font-semibold">WHO AM I</div>
             <AboutMe />
-            <div>random quote or random talk (in half width box)</div>
+            {/* <div>random quote or random talk (in half width box)</div> */}
             <span className="h-px w-[100%] bg-gradient-to-r from-transparent via-blue-500/80 to-transparent transition-opacity duration-500 group-hover:opacity-40" />
 
             <div className="text-3xl font-semibold">WHAT I KNOW</div>

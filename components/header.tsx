@@ -16,7 +16,7 @@ export default () => {
     return (
         <>
             <header className="fixed z-40 w-screen px-5 mt-1 sm:px-2 h-20 csm:h-[4.5rem] flex justify-between items-center text-base" >
-                <nav className="flex justify-between items-center w-[80rem] mx-auto rounded-2xl px-5 sm:px-3 py-2.5 csm:py-2 bg-foreground/[0.03] backdrop-blur-md shadow-md">
+                <nav className="flex justify-between items-center w-[80rem] mx-auto rounded-2xl px-5 sm:px-3 py-2.5 csm:py-2 bg-foreground/[0.03] sm:bg-foreground/5 backdrop-blur-md shadow-md">
                     <Logo />
                     <NavLinksContainer setIsOpen={setIsOpen} />
                     <ExtraLinks />
@@ -123,7 +123,7 @@ const MobileNav: React.FC<{ setIsOpen: (isOpen: boolean) => void }> = ({ setIsOp
     <>
         <div className="fixed inset-0 z-20 h-screen w-screen " onClick={() => setIsOpen(false)} />
         <div
-            className={cn(" motion-preset-slide-down-sm bg-foreground/10 z-30 backdrop-blur-md rounded-xl fixed flex gap-3.5 justify-center items-center text-center inset-0 h-[60svh] max-w-[90svw] max-h-[90svh] m-auto")}
+            className={cn("fixed motion-preset-slide-left-md bg-zinc-300/40 dark:bg-zinc-600/20 z-30 backdrop-blur-lg border border-foreground/20 shadow-lg rounded-xl flex gap-3.5 justify-center items-center text-center inset-0 h-[45svh] max-w-[95svw] max-h-[90svh] top-20 mx-auto")}
         // initial={{ opacity: 0, y: -20 }}
         // animate={{ opacity: 1, y: 0, }}
         // transition={{ duration: 0.3 }}

@@ -42,13 +42,13 @@ export default function Home() {
                             <Image src="/images/handwave.svg" className="stroke-sky-50 dark:invert bg-transparent sm:w-5" width={25} height={25} alt="wave hand" />
                             <span>, I'm </span>
                         </div>
-                        <div className="flex w-full justify-center text-6xl cmid:text-5xl [@media(max-width:640px)]:text-4xl -ml-0.5 font-semibold font-baloo text-neutral-600 dark:text-neutral-400">
+                        <div className="flex w-full justify-center text-6xl cmid:text-5xl [@media(max-width:640px)]:text-4xl -ml-0.5 font-semibold font-baloo text-foreground">
                             {/* <FlipWords words={names} className="ml-5 sm:ml-1 " duration={5000} /> <br /> */}
                             <TextReveal text="krishna" revealText="< cybergaz />" />
                         </div>
                     </div>
                     <div
-                        className=" motion-blur-in-md motion-delay-700 motion-duration-1000 flex flex-col justify-center items-center text-2xl csm:text-center [@media(max-width:640px)]:text-left sm:text-xl csm:leading-8 leading-9 font-baloo dark:text-neutral-400 "
+                        className=" motion-blur-in-md motion-delay-700 motion-duration-1000 flex flex-col justify-center items-center text-[1.4rem] csm:text-center [@media(max-width:640px)]:text-left sm:text-xl csm:leading-8 leading-9 font-baloo dark:text-neutral-400 "
                     // initial={{ opacity: 0, y: 50 }}
                     // animate={{ opacity: 1, y: 0 }}
                     // transition={{ duration: 0.5, delay: 0.5 }}
