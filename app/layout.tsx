@@ -5,10 +5,11 @@ import localFont from 'next/font/local'
 import "@/app/globals.css";
 import { ThemeProvider } from "next-themes"
 import Footer from "@/components/footer";
-import Header from "@/components/header";
+import Header from "@/components/header/header";
 
 import { SITE_URL, SITE_TITLE, SITE_DESCRIPTION, SITE_NAME, SITE_KEYWORDS } from "@/lib/constants"
 import Preload from "@/components/preload";
+import HeroGeometric from "@/components/ui/hero-shapes";
 
 // const montserrat = Baloo_2({
 //     subsets: ['latin'],
@@ -129,6 +130,7 @@ export default function RootLayout({
                         {/* <div className="fixed h-screen w-screen bg-background/30 backdrop-blur-[10px] -z-[9]" /> */}
 
                         <Preload>
+                            <HeroGeometric />
                             <Header />
                             {children}
                             <Footer />

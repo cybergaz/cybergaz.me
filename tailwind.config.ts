@@ -30,6 +30,7 @@ const config: Config = {
             colors: {
                 background: 'hsl(var(--background))',
                 foreground: 'hsl(var(--foreground))',
+                accent: 'var(--accent)',
             }
         }
     },

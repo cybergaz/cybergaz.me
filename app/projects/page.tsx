@@ -8,7 +8,7 @@ export default function Projects() {
             {/* <Preload /> */}
 
             Projects Page is under construction
-            <Image src="/images/worker.svg" className="dark:invert bg-transparent mb-20" alt="..." width={120} height={40} />
+            <Image src="/images/svg/worker.svg" className="dark:invert bg-transparent mb-20" alt="..." width={120} height={40} />
 
             {/* okay here are some of my selected projects */}
             {/* ... */}
