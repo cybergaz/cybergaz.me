@@ -16,7 +16,7 @@ export default () => {
     return (
         <>
             <header className="fixed z-40 w-screen px-5 mt-1 sm:px-2 h-20 csm:h-[4.5rem] flex justify-between items-center text-base" >
-                <nav className="flex justify-between items-center w-[80rem] mx-auto rounded-2xl px-5 sm:px-3 py-2.5 csm:py-2 bg-foreground/[0.03] sm:bg-foreground/5 backdrop-blur-md shadow-md">
+                <nav className="flex justify-between items-center w-[80rem] mx-auto rounded-2xl px-5 sm:px-3 py-2.5 csm:py-2 bg-foreground/[0.04] sm:bg-foreground/5 backdrop-blur-md shadow-md">
                     <Logo />
                     <NavLinksContainer setIsOpen={setIsOpen} />
                     <ExtraLinks />
@@ -95,7 +95,7 @@ const IconLink: React.FC<{ href: string; label: string }> = ({ href, label }) =>
         target="_blank"
         className="flex justify-center items-center transition-colors duration-500 gap-1 px-3 py-2 rounded-full cursor-pointer hover:bg-foreground/10"
     >
-        {label} <Image className="dark:invert bg-transparent rotate-[220deg]" src="/images/arrow.svg" alt="arrow icon" width={15} height={19} />
+        {label} <Image className="dark:invert bg-transparent rotate-[220deg]" src="/images/svg/arrow.svg" alt="arrow icon" width={15} height={19} />
     </a>
 );
 

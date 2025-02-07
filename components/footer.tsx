@@ -3,20 +3,20 @@ import Image from "next/image"
 export default () => {
     return (
 
-        <footer className=" mt-20 sm:mt-32 mb-5 sm:mb-20 px-5 sm:px-2 h-20 csm:h-[4.5rem] flex justify-between items-center font-baloo font-normal ">
-            <div className="flex sm:flex-col sm:gap-8 justify-between items-center w-[80rem] mx-auto rounded-2xl px-5 sm:px-3 py-2 bg-foreground/[0.03] sm:bg-foreground/5 shadow-md">
+        <footer className="mt-20 sm:mt-32 mb-5 sm:mb-20 px-5 sm:px-2 h-20 csm:h-[4.5rem] flex justify-between items-center font-baloo font-normal ">
+            <div className="flex sm:flex-col sm:gap-8 justify-between items-center w-[80rem] mx-auto rounded-2xl px-5 sm:px-3 py-2 backdrop-blur-md bg-foreground/[0.04] sm:bg-foreground/5 shadow-md">
 
                 <div>© 2024 Gaz</div>
                 <div className="flex flex-col">
                     <span> listening to </span>
-                    <Image src="/images/spotify.svg" className="dark:invert bg-transparent" width={20} height={20} alt="spotify" />
+                    <Image src="/images/svg/spotify.svg" className="dark:invert bg-transparent" width={20} height={20} alt="spotify" />
                 </div>
                 <div>
                     <div className="flex justify-start py-1 items-center gap-5">
-                        <Image src="/images/mail.svg" className="dark:invert bg-transparent" width={20} height={20} alt="mail" /> gaz.sync@gmail.com
+                        <Image src="/images/svg/mail.svg" className="dark:invert bg-transparent" width={20} height={20} alt="mail" /> gaz.sync@gmail.com
                     </div>
                     <div className="flex justify-start py-1 items-center gap-5">
-                        <Image src="/images/call.svg" className="dark:invert bg-transparent" width={20} height={20} alt="call" /> +91 8534946840
+                        <Image src="/images/svg/call.svg" className="dark:invert bg-transparent" width={20} height={20} alt="call" /> +91 8534946840
                     </div>
                 </div>
             </div>
