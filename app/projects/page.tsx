@@ -21,7 +21,7 @@ export default function Projects() {
             {/* Liked this portfolio? */}
             {/* Make this yours by forking. */}
 
-            <div>this page is unfinshed , and i'm currently building it</div>
+            <div>this page is unfinshed , and i'm currently working on it</div>
             <div>in the mean time, you can visit my old portfolio <a className="text-blue-500" href="https://cybergaz-old.vercel.app" target="_blank">OLD PORTFOLIO</a></div>
         </div>
     )

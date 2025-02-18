@@ -9,9 +9,11 @@ import { ToggleTheme } from "@/components/toggle-theme"
 import { cn } from "@/lib/utils"
 import { LINKS, NAVLINKS } from "@/lib/constants";
 import { usePathname } from "next/navigation"
+import { useOutsideClick } from "@/lib/hooks/use-outside-click"
 
 export default () => {
     const [isOpen, setIsOpen] = useState(false)
+    const menuButtonRef = React.useRef<HTMLButtonElement>(null);
 
     return (
         <>
@@ -20,16 +22,16 @@ export default () => {
                     <Logo />
                     <NavLinksContainer setIsOpen={setIsOpen} />
                     <ExtraLinks />
-                    <MenuButton isOpen={isOpen} setIsOpen={setIsOpen} />
+                    <MenuButton menuButtonRef={menuButtonRef} isOpen={isOpen} setIsOpen={setIsOpen} />
                 </nav>
             </header>
 
-            {isOpen && <MobileNav setIsOpen={setIsOpen} />}
+            {isOpen && <MobileNav menuButtonRef={menuButtonRef} setIsOpen={setIsOpen} />}
         </>
     )
 }
 
-const Logo: React.FC = () => (
+const Logo = () => (
     <div
         className="motion-preset-slide-down-lg motion-delay-100 motion-duration-1000 flex justify-center items-center pr-56 csm:pr-1"
     // initial={{ opacity: 0, x: -30 }}
@@ -42,7 +44,7 @@ const Logo: React.FC = () => (
     </div>
 )
 
-const NavLinksContainer: React.FC<{ setIsOpen: (isOpen: boolean) => void }> = ({ setIsOpen }) => (
+const NavLinksContainer = ({ setIsOpen }: { setIsOpen: (isOpen: boolean) => void }) => (
     <div
         className="motion-preset-slide-down-lg motion-delay-500 motion-duration-1000 px-[0.3rem] py-[0.67rem] border-[0.5px] border-foreground/[0.07] rounded-full csm:hidden "
     // initial={{ opacity: 0, scale: 0.85 }}
@@ -53,7 +55,7 @@ const NavLinksContainer: React.FC<{ setIsOpen: (isOpen: boolean) => void }> = ({
     </div>
 )
 
-const NavLinks: React.FC<{ setIsOpen: (isOpen: boolean) => void }> = ({ setIsOpen }) => (
+const NavLinks = ({ setIsOpen }: { setIsOpen: (isOpen: boolean) => void }) => (
     <ul className={cn("relative flex csm:flex-col csm:space-y-6 items-center justify-center gap-x-3")}>
         {NAVLINKS.map(({ title, href }, i) => {
             const isActive = href === usePathname()
@@ -76,7 +78,7 @@ const NavLinks: React.FC<{ setIsOpen: (isOpen: boolean) => void }> = ({ setIsOpe
     </ul >
 )
 
-const ExtraLinks: React.FC = () => (
+const ExtraLinks = () => (
     <div
         className="motion-preset-slide-down-lg motion-delay-700 motion-duration-1000 flex justify-center items-center gap-1 will-change-auto sm:hidden"
     // initial={{ opacity: 0, x: 30 }}
@@ -89,7 +91,7 @@ const ExtraLinks: React.FC = () => (
     </div>
 )
 
-const IconLink: React.FC<{ href: string; label: string }> = ({ href, label }) => (
+const IconLink = ({ href, label }: { href: string; label: string }) => (
     <a
         href={href}
         target="_blank"
@@ -99,8 +101,15 @@ const IconLink: React.FC<{ href: string; label: string }> = ({ href, label }) =>
     </a>
 );
 
-const MenuButton: React.FC<{ isOpen: boolean, setIsOpen: (isOpen: boolean) => void }> = ({ isOpen, setIsOpen }) => (
+type menuButtonProps = {
+    isOpen: boolean,
+    setIsOpen: (isOpen: boolean) => void,
+    menuButtonRef?: React.RefObject<HTMLButtonElement>
+}
+
+const MenuButton = ({ isOpen, setIsOpen, menuButtonRef }: menuButtonProps) => (
     <button
+        ref={menuButtonRef}
         onClick={() => setIsOpen(!isOpen)}
         className={cn("motion-preset-slide-down-lg motion-delay-300 motion-duration-1000 relative group hidden csm:block")}>
         <div className={cn("relative flex overflow-hidden items-center justify-center rounded-full w-[50px] h-[50px] transform transition-all duration-200")}>
@@ -119,22 +128,35 @@ const MenuButton: React.FC<{ isOpen: boolean, setIsOpen: (isOpen: boolean) => vo
     </button>
 )
 
-const MobileNav: React.FC<{ setIsOpen: (isOpen: boolean) => void }> = ({ setIsOpen }) => (
-    <>
-        <div className="fixed inset-0 z-20 h-screen w-screen " onClick={() => setIsOpen(false)} />
-        <div
-            className={cn("fixed motion-preset-slide-left-md bg-zinc-300/40 dark:bg-zinc-600/20 z-30 backdrop-blur-lg border border-foreground/20 shadow-lg rounded-xl flex gap-3.5 justify-center items-center text-center inset-0 h-[45svh] max-w-[95svw] max-h-[90svh] top-20 mx-auto")}
-        // initial={{ opacity: 0, y: -20 }}
-        // animate={{ opacity: 1, y: 0, }}
-        // transition={{ duration: 0.3 }}
-        >
-            <NavLinks setIsOpen={setIsOpen} />
-            <div className="w-[1px] bg-background h-[15svh] hidden sm:block" />
-            <div className="sm:flex sm:flex-col sm:justify-center sm:items-center gap-2 will-change-auto hidden " >
-                <IconLink href={LINKS.github} label="Github" />
-                <IconLink href={LINKS.resume} label="Resume" />
-                <ToggleTheme className={"ml-0"} />
+const MobileNav = ({ menuButtonRef, setIsOpen }: { menuButtonRef?: React.RefObject<HTMLButtonElement>, setIsOpen: (isOpen: boolean) => void }) => {
+    const divRef = React.useRef<HTMLDivElement>(null);
+    useOutsideClick(divRef, () => setIsOpen(false), menuButtonRef);
+
+    return (
+        <>
+            {/* <div className="fixed inset-0 z-20 h-screen w-screen " onClick={() => setIsOpen(false)} /> */}
+            <div
+                ref={divRef}
+                className={cn(
+                    "fixed z-30 flex gap-3.5 justify-center items-center text-center inset-0 h-[45svh] max-w-[95svw] max-h-[90svh] top-20 mx-auto",
+                    "bg-zinc-300/40 dark:bg-zinc-600/20 backdrop-blur-lg",
+                    "border border-foreground/20 shadow-lg rounded-xl",
+                    "motion-opacity-in-0 motion-scale-in-[0.5] motion-translate-x-in-[25%] motion-translate-y-in-[-42%] motion-duration-200/translate motion-duration-300/scale motion-duration-500/opacity"
+
+                )}
+
+            // initial={{ opacity: 0, y: -20 }}
+            // animate={{ opacity: 1, y: 0, }}
+            // transition={{ duration: 0.3 }}
+            >
+                <NavLinks setIsOpen={setIsOpen} />
+                <div className="w-[1px] bg-background h-[15svh] hidden sm:block" />
+                <div className="sm:flex sm:flex-col sm:justify-center sm:items-center gap-2 will-change-auto hidden " >
+                    <IconLink href={LINKS.github} label="Github" />
+                    <IconLink href={LINKS.resume} label="Resume" />
+                    <ToggleTheme className={"ml-0"} />
+                </div>
             </div>
-        </div>
-    </>
-)
+        </>
+    )
+}

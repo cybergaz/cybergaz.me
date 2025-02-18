@@ -1,11 +1,10 @@
-"use client"
-
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { AnimatedTabs, Tab } from "../ui/animated-tabs"
 import { Bell, Home, HelpCircle, Settings, Shield, Mail, User, FileText, Lock } from "lucide-react";
 import { ExpandableTabs, Tab as TabItem } from "@/components/ui/expandable-tabs";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import PopupCard from "../ui/popup-card";
 
 type SkillItemType = {
     iconPath: string,
@@ -17,7 +16,7 @@ type SkillItemType = {
 
 const SkillsItem = ({ iconPath, title, opacity, color, className }: SkillItemType) => {
     return (
-        <div className={cn("flex flex-col gap-y-2 justify-center items-center", opacity)}>
+        <div className={cn("flex flex-col gap-y-2 justify-center items-center sm:scale-75", opacity)}>
             <div className={cn("relative rounded-full bg-foreground/10 p-5", color)}>
                 <div className="absolute right-4 top-4 h-1 w-1 rounded-full bg-green-400 animate-ping" />
                 <Image src={iconPath} alt={title} width={50} height={50} className={cn("w-12 h-12", className)} />
@@ -29,6 +28,10 @@ const SkillsItem = ({ iconPath, title, opacity, color, className }: SkillItemTyp
     )
 }
 
+// const popupCardItem = () => (
+//
+// )
+
 export function Skills() {
 
     const skillsTabs: Tab[] = [
@@ -36,18 +39,38 @@ export function Skills() {
             id: "tab1",
             label: "Programming Languages",
             content: (
-                <>
-                    <div> proficiency is sorted by opacity (?) -- make this a button to popup a help card describing your representation </div>
-                    <div className="py-10 grid grid-cols-5 gap-10 gap-y-16 w-full h-full">
+                <div className="flex flex-col justify-center items-center">
+                    <div className="flex justify-center items-center"> proficiency is sorted by opacity
+                        <PopupCard buttonText="?" buttonWidth={30} buttonHeight={30}>
+                            <div className="flex justify-between items-start mb-4">
+                                <h3 className="text-lg font-bold text-gray-800">why different opacity?</h3>
+                                {/* <button */}
+                                {/*     ref={excludeButtonRef} */}
+                                {/*     onClick={(e) => { */}
+                                {/*         e.stopPropagation(); */}
+                                {/*         setIsOpen(!isOpen); */}
+                                {/*     }} */}
+                                {/*     className="text-gray-500 hover:text-gray-700" */}
+                                {/* > */}
+                                {/*     × */}
+                                {/* </button> */}
+                            </div>
+                            <p className="text-gray-600 text-sm flex-1">
+                                skills items are sorted by opacity, the higher the opacity the higher the proficiency
+                            </p>
+                        </PopupCard>
+
+                    </div>
+                    <div className="py-10 grid grid-cols-5 csm:grid-cols-4 [@media(max-width:640px)]:grid-cols-3 gap-10 gap-y-16 w-full h-full">
                         <SkillsItem iconPath="/images/skills/rust.svg" title="Rust" className="dark:invert" color="bg-amber-900/20 border border-amber-900/30" />
                         <SkillsItem iconPath="/images/skills/typescript.svg" title="TypeScript" className="rounded-full" color="bg-blue-600/10 border border-blue-600/20" />
                         <SkillsItem iconPath="/images/skills/javascript.svg" title="JavaScript" className="rounded-full" color="bg-yellow-500/10 border border-yellow-500/20" />
                         <SkillsItem iconPath="/images/skills/bash.svg" title="Bash" className="" color="border border-foreground/15" />
-                        <SkillsItem iconPath="/images/skills/python.svg" title="Python" className="" color="bg-blue-700/10 border border-blue-700/20" opacity="" />
-                        <SkillsItem iconPath="/images/skills/java.svg" title="Java" className="" color="bg-indigo-600/10 border border-indigo-600/20" />
-                        <SkillsItem iconPath="/images/skills/go.svg" title="Go" className="" color="bg-blue-400/10 border border-blue-400/20" />
+                        <SkillsItem iconPath="/images/skills/python.svg" title="Python" className="" color="bg-blue-700/10 border border-blue-700/20" opacity="opacity-70" />
+                        <SkillsItem iconPath="/images/skills/java.svg" title="Java" className="" color="bg-indigo-600/10 border border-indigo-600/20" opacity="opacity-50" />
+                        <SkillsItem iconPath="/images/skills/go.svg" title="Go" className="" color="bg-blue-400/10 border border-blue-400/20" opacity="opacity-30" />
                     </div>
-                </>
+                </div>
             ),
         },
         {
@@ -55,14 +78,15 @@ export function Skills() {
             label: "Backend Development",
             content: (
                 <div className="py-10 grid grid-cols-5 gap-10 gap-y-14 w-full h-full">
-                    <SkillsItem iconPath="/images/skills/express.svg" title="Express.js" className="dark:invert" />
-                    <SkillsItem iconPath="/images/skills/express.svg" title="Express.js" className="dark:invert" />
-                    <SkillsItem iconPath="/images/skills/express.svg" title="Express.js" className="dark:invert" />
-                    <SkillsItem iconPath="/images/skills/express.svg" title="Express.js" className="dark:invert" />
-                    <SkillsItem iconPath="/images/skills/express.svg" title="Express.js" className="dark:invert" />
-                    <SkillsItem iconPath="/images/skills/express.svg" title="Express.js" className="dark:invert" />
-                    <SkillsItem iconPath="/images/skills/express.svg" title="Express.js" className="dark:invert" />
-                    <SkillsItem iconPath="/images/skills/express.svg" title="Express.js" className="dark:invert" />
+                    under contruction
+                    {/* <SkillsItem iconPath="/images/skills/express.svg" title="Express.js" className="dark:invert" /> */}
+                    {/* <SkillsItem iconPath="/images/skills/express.svg" title="Express.js" className="dark:invert" /> */}
+                    {/* <SkillsItem iconPath="/images/skills/express.svg" title="Express.js" className="dark:invert" /> */}
+                    {/* <SkillsItem iconPath="/images/skills/express.svg" title="Express.js" className="dark:invert" /> */}
+                    {/* <SkillsItem iconPath="/images/skills/express.svg" title="Express.js" className="dark:invert" /> */}
+                    {/* <SkillsItem iconPath="/images/skills/express.svg" title="Express.js" className="dark:invert" /> */}
+                    {/* <SkillsItem iconPath="/images/skills/express.svg" title="Express.js" className="dark:invert" /> */}
+                    {/* <SkillsItem iconPath="/images/skills/express.svg" title="Express.js" className="dark:invert" /> */}
                 </div>
             ),
         },
@@ -81,8 +105,7 @@ export function Skills() {
                             Tab 2
                         </h2>
                         <p className="text-sm text-gray-200 mt-0">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-                            quos.
+                            under contruction
                         </p>
                     </div>
                 </div>
@@ -98,8 +121,7 @@ export function Skills() {
                             Tab 3
                         </h2>
                         <p className="text-sm text-gray-200 mt-0">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-                            quos.
+                            under contruction
                         </p>
                     </div>
                 </div>
@@ -115,8 +137,7 @@ export function Skills() {
                             Tab 3
                         </h2>
                         <p className="text-sm text-gray-200 mt-0">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-                            quos.
+                            under contruction
                         </p>
                     </div>
                 </div>

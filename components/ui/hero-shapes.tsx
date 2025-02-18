@@ -1,14 +1,39 @@
 "use client";
-// "add responsible size for shapes ;; add a variable for that long motion animation className
 
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
+import { useState, useEffect } from "react";
+
+const useResponsiveSize = (width: number, height: number) => {
+    const [size, setSize] = useState({ width: width, height: height });
+
+    useEffect(() => {
+        const originalScreenWidth = window.screen.width;
+        const updateSize = () => {
+            const screenWidth = window.innerWidth;
+            const scale = screenWidth / originalScreenWidth;
+
+            setSize({
+                width: width * scale, // Maintain 4:1 ratio
+                height: height * scale, // Maintain 4:1 ratio
+            });
+        };
+
+        window.addEventListener("resize", updateSize);
+        updateSize(); // Initialize on mount
+
+        return () => window.removeEventListener("resize", updateSize);
+    }, []);
+
+    return size;
+};
+
 function ElegantShape({
     className,
     delay = 0,
-    width = 400,
-    height = 100,
+    width: fixedWidth = 400,
+    height: fixedHeight = 100,
     rotate = 0,
     gradient = "from-white/[0.08]",
 }: {
@@ -19,6 +44,10 @@ function ElegantShape({
     rotate?: number;
     gradient?: string;
 }) {
+    const iwidth = fixedWidth;
+    const iheight = fixedHeight;
+    const { width, height } = useResponsiveSize(iwidth, iheight);
+
     return (
         <motion.div
             initial={{
@@ -41,7 +70,7 @@ function ElegantShape({
         >
             <motion.div
                 animate={{
-                    y: [0, 15, 0],
+                    y: [0, 30, 0],
                 }}
                 transition={{
                     duration: 12,
@@ -56,10 +85,10 @@ function ElegantShape({
             >
                 <div
                     className={cn(
-                        "absolute inset-0 rounded-full",
-                        "bg-linear-to-r to-transparent",
+                        "absolute inset-0 rounded-full dark:opacity-70",
+                        "bg-gradient-to-r to-transparent",
                         gradient,
-                        " border border-foreground/[0.15]",
+                        "border border-foreground/[0.15]",
                         "shadow-[0_2px_50px_0_rgba(3,4,13,0.1)] dark:shadow-[0_2px_50px_0_rgba(255,255,255,0.1)]",
                         "after:absolute after:inset-0 after:rounded-full",
                         "after:bg-[radial-gradient(circle_at_50%_50%,rgba(3,4,13,0.2),transparent_90%)] dark:after:bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.2),transparent_90%)]"
@@ -71,6 +100,24 @@ function ElegantShape({
 }
 
 const HeroGeometric = () => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768); // 768px is the breakpoint for tablets
+        };
+
+        checkMobile(); // Check on mount
+        window.addEventListener("resize", checkMobile); // Check on resize
+
+        return () => window.removeEventListener("resize", checkMobile); // Cleanup
+    }, []);
+
+    // Don't render the component if the screen is mobile
+    if (isMobile) {
+        return null;
+    }
+
     return (
         <div className="-z-10 fixed min-h-screen w-full flex items-center justify-center overflow-hiddden">
 

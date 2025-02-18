@@ -24,7 +24,7 @@ export default function About() {
             <div className="w-screen h-60"></div>
 
             <span className="h-px w-[100%] bg-gradient-to-r from-transparent via-blue-500/80 to-transparent transition-opacity duration-500 group-hover:opacity-40" />
-            <div className="text-2xl">this page is unfinshed, and i'm currently building it</div>
+            <div className="text-2xl">this page is unfinshed, and i'm currently working on it</div>
             <div>in the mean time, you can visit my old portfolio <a className="text-blue-500" href="https://cybergaz-old.vercel.app" target="_blank">OLD PORTFOLIO</a></div>
 
 
