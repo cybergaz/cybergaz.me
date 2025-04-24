@@ -91,13 +91,13 @@ export default function Home() {
                     // animate={{ opacity: 1, y: 0 }}
                     // transition={{ duration: 0.5, delay: 0.5 }}
                     >
-                        <div>
+                        <h2>
                             A passionate Full-Stack Developer & low-level enthusiast, who enjoys building
                             <br className="hidden csm:block" />
                             <FlipWords words={words} className="text-accent sm:-ml-2" duration={3000} />
                             <br />
                             with a focus on performance, reliability, attention to detail and seamless functionality along with the clean code."
-                        </div>
+                        </h2>
                     </div>
                     <div
                         className="sm:scale-90 motion-opacity-in-0 motion-scale-in-[0.9] motion-translate-y-in-[70%] motion-duration-[1.1s]/scale motion-duration-[1.0s]/translate motion-duration-[2.1s]/opacity motion-delay-[1300ms]"

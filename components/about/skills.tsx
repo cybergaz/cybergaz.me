@@ -147,6 +147,7 @@ export function Skills() {
 
     return (
         <>
+            <div>we need more images as BG to showcase our blur (take inspiration from deccan.ai)</div>
             <AnimatedTabs tabs={skillsTabs} />
         </>
     )

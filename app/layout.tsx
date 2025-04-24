@@ -85,7 +85,7 @@ export const metadata: Metadata = {
         locale: 'en-US',
         images: [
             {
-                url: '/images/main.png',
+                url: '/favicon/favicon.ico',
                 width: 1200,
                 height: 630,
                 alt: SITE_DESCRIPTION,

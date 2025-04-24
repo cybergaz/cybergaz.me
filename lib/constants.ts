@@ -13,7 +13,7 @@ export const LINKS = {
     whatsapp: 'https://wa.me/918534946840',
     telegram: 'https://t.me/cyber_gaz',
     x: 'https://x.com/gaz_guine',
-    email: 'mailto:gaz.sync@gmail.com',
+    email: 'gaz.sync@gmail.com',
     resume: 'https://docs.google.com/document/d/15S-Iosgq6zDaIkpsCFT3Ln--NTU4O3qo/edit?usp=sharing&ouid=114908455304794398126&rtpof=true&sd=true'
 }
 
